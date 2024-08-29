@@ -1,0 +1,2167 @@
+null
+		"due_at": "2024-10-02T03:59:00Z",
+		"name": "PA#1 - The ChatGPT Scheduler",
+		"id": 8608633,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": false,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-11-13T04:59:00Z",
+		"name": "PA#2 - Concurrent Hash Table (groups enabled)",
+		"id": 8608634,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": false,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-08-26T03:59:00Z",
+		"name": "Course Expectations Survey",
+		"id": 8608630,
+		"has_submitted_submissions": true,
+		"is_quiz_assignment": false,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-08-26T03:59:00Z",
+		"name": "Quiz 1 - Introduction to Operating Systems",
+		"id": 8608607,
+		"has_submitted_submissions": true,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-09-02T03:59:00Z",
+		"name": "Quiz 2 - Process Schedulers",
+		"id": 8608620,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-09-09T03:59:00Z",
+		"name": "Quiz 3 - Virtual Memory",
+		"id": 8608624,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-09-16T03:59:00Z",
+		"name": "Quiz 4 - Paging and the TLB",
+		"id": 8608605,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-09-30T03:59:00Z",
+		"name": "Quiz 5 - Freespace Management, Paging, Swapping",
+		"id": 8608631,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-10-12T03:59:00Z",
+		"name": "Quiz 6 - Threads and Locks",
+		"id": 8608613,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-10-21T03:59:00Z",
+		"name": "Quiz 8 - Concurrency Bugs",
+		"id": 8608621,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	}
+]		"require_lockdown_browser": false
+	}
+]u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003estate\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003edefine\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003earrange\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003ename\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003erelate\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003edescribe\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003etell\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003erecall\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003ememorize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003erecall\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003erepeat\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003erecognize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003elabel\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003eselect\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003ereproduce\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eComprehension Level\u003c/u\u003e: Restate or interpret information in their own words.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003eexplain\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 148px;\" scope=\"col\"\u003e\n\u003cp\u003edescribe\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003ereport\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003etranslate\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003eexpress\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003esummarize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003eidentify\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003eclassify\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003ediscuss\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003erestate\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003elocate\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003ecompare\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003ediscuss\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003ereview\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003eillustrate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003etell\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003ecritique\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003eestimate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003ereference\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003einterpret\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003ereiterate\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eApplication Level\u003c/u\u003e: Use or apply the learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003eapply\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003esketch\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003eperform\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003euse\u003c/td\u003e\n\u003ctd\u003esolve\u003c/td\u003e\n\u003ctd\u003erespond\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003epractice\u003c/td\u003e\n\u003ctd\u003econstruct\u003c/td\u003e\n\u003ctd\u003erole-play\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edemonstrate\u003c/td\u003e\n\u003ctd\u003econduct\u003c/td\u003e\n\u003ctd\u003eexecute\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecomplete\u003c/td\u003e\n\u003ctd\u003edramatize\u003c/td\u003e\n\u003ctd\u003eemploy\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eAnalysis Level\u003c/u\u003e: Examine the learned information critically.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003eanalyze\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003einspect\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003etest\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edistinguish\u003c/td\u003e\n\u003ctd\u003ecategorize\u003c/td\u003e\n\u003ctd\u003ecritique\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edifferentiate\u003c/td\u003e\n\u003ctd\u003ecatalogue\u003c/td\u003e\n\u003ctd\u003ediagnose\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eappraise\u003c/td\u003e\n\u003ctd\u003equantify\u003c/td\u003e\n\u003ctd\u003eextrapolate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecalculate\u003c/td\u003e\n\u003ctd\u003emeasure\u003c/td\u003e\n\u003ctd\u003etheorize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eexperiment\u003c/td\u003e\n\u003ctd\u003erelate\u003c/td\u003e\n\u003ctd\u003edebate\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eSynthesis Level\u003c/u\u003e: Create new models using the learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003edevelop\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003erevise\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003ecompose\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eplan\u003c/td\u003e\n\u003ctd\u003eformulate\u003c/td\u003e\n\u003ctd\u003ecollect\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ebuild\u003c/td\u003e\n\u003ctd\u003epropose\u003c/td\u003e\n\u003ctd\u003econstruct\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecreate\u003c/td\u003e\n\u003ctd\u003eestablish\u003c/td\u003e\n\u003ctd\u003eprepare\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edesign\u003c/td\u003e\n\u003ctd\u003eintegrate\u003c/td\u003e\n\u003ctd\u003edevise\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eorganize\u003c/td\u003e\n\u003ctd\u003emodify\u003c/td\u003e\n\u003ctd\u003emanage\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eEvaluation Level\u003c/u\u003e: Assess or judge the value of learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003ereview\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003eappraise\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003echoose\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ejustify\u003c/td\u003e\n\u003ctd\u003eargue\u003c/td\u003e\n\u003ctd\u003econclude\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eassess\u003c/td\u003e\n\u003ctd\u003erate\u003c/td\u003e\n\u003ctd\u003ecompare\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edefend\u003c/td\u003e\n\u003ctd\u003escore\u003c/td\u003e\n\u003ctd\u003eevaluate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ereport on\u003c/td\u003e\n\u003ctd\u003eselect\u003c/td\u003e\n\u003ctd\u003einterpret\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003einvestigate\u003c/td\u003e\n\u003ctd\u003emeasure\u003c/td\u003e\n\u003ctd\u003esupport\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
+		"due_at": "2024-08-26T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-08-27T03:59:00Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:27Z",
+		"updated_at": "2024-08-26T15:50:20Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 1,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": 2,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"lock_at": "2024-08-27T03:59:00Z",
+			"can_view": true,
+			"asset_string": "assignment_8554264"
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImExYzA4NmMzLTljYzctNDQ3YS05MWYwLTBkNjViYzkzNTg4NiIsImx0aV9hc3NpZ25tZW50X2Rlc2NyaXB0aW9uIjoiXHUwMDNjZGl2IGNsYXNzPVwiZGVzY3JpcHRpb24gdXNlcl9jb250ZW50IHRlYWNoZXItdmVyc2lvbiBlbmhhbmNlZFwiXHUwMDNlXG5cdTAwM2NwXHUwMDNlXHUwMDNjc3Bhblx1MDAzZVlvdSB3aWxsIG5lZWQgdG8gdXNlIHRoZSBwcm92aWRlZCB0ZW1wbGF0ZSBpbiB0aGUgd2lkZ2V0IGZvciB5b3VyIGd1aWRlZCBub3Rlcy4gXHUwMDNjL3NwYW5cdTAwM2VcdTAwM2NzcGFuXHUwMDNlV2hlbiB5b3UgdXNlIHRoZSBndWlkZWQgbm90ZXMgd2lkZ2V0IGl0IGRvZXMgbm90IHNhdmUgdGhlIGRvY3VtZW50IGluIHRoYXQgcGFnZSB5b3UgbXVzdCBjcmVhdGUgYSBkb2N1bWVudCBhbmQgZXhwb3J0IHRvIHNhdmUgb24geW91ciBjb21wdXRlci4gSWYgeW91IGRvIG5vdCBleHBvcnQgdGhlIGRvY3VtZW50IHRvIHlvdXIgY29tcHV0ZXIgaXQgd2lsbCBub3Qgc2F2ZS5cdTAwM2Mvc3Bhblx1MDAzZVx1MDAzYy9wXHUwMDNlXG5cdTAwM2NwXHUwMDNlWW91IHdpbGwgc3VibWl0IGEgXHUwMDNjc3Ryb25nXHUwMDNlc2luZ2xlIHdvcmQgZG9jdW1lbnRcdTAwM2Mvc3Ryb25nXHUwMDNlIGNvbnRhaW5pbmcgdGhlIGd1aWRlZCBub3RlcyBmb3IgYWxsIG9mIHRoZSBsZWN0dXJlIHZpZGVvIGluIHRoaXMgbW9kdWxlLiBEbyBub3QgdXBsb2FkIHRoZW0gc2VwYXJhdGVseSB5b3UgbXVzdCBjb21iaW5lIHRoZW0uXHUwMDNjL3BcdTAwM2Vcblx1MDAzY3BcdTAwM2VXaGVuIHdyaXRpbmcgdGhlIG9iamVjdGl2ZXMgZm9yIHRoZSBndWlkZWQgbm90ZXMgSSB3YW50IHlvdSB0byB3cml0ZSB0aGVtIGFzIHNob3J0IHN0YXRlbWVudHMgdXNpbmcgYWN0aW9uIHZlcmJzLiBJIHdpbGwgYmUgbG9va2luZyBmb3IgbW9yZSBkZXB0aCB0byB0aGUgb2JqZWN0aXZlcy5cdTAwM2MvcFx1MDAzZVxuXHUwMDNjcFx1MDAzZUV4YW1wbGU6IFwiXHUwMDNjc3Ryb25nXHUwMDNlVW5kZXJzdGFuZFx1MDAzYy9zdHJvbmdcdTAwM2UgaG93IHRoZSBzY2llbnRpZmljIG1ldGhvZCBpcyBhbiBhcHByb2FjaCB0byBwZXJmb3JtaW5nIHNjaWVuY2VcIlx1MDAzYy9wXHUwMDNlXG5cdTAwM2NwXHUwMDNlQWN0aW9uIHZlcmJzOlx1MDAzYy9wXHUwMDNlXG5cdTAwM2NwXHUwMDNlXHUwMDNjdVx1MDAzZUtub3dsZWRnZSBMZXZlbFx1MDAzYy91XHUwMDNlOiBSZWNvZ25pemUgb3IgcmVjYWxsIGxlYXJuZWQgaW5mb3JtYXRpb24uXHUwMDNjL3BcdTAwM2Vcblx1MDAzY2Jsb2NrcXVvdGVcdTAwM2Vcblx1MDAzY3RhYmxlIHN0eWxlPVwid2lkdC4uLiAodHJ1bmNhdGVkKSJ9.BOLwIXP7i69ZNe2rZmQZMIqwg2ERYQy8xF4e7BlzgIs",
+		"lti_context_id": "a1c086c3-9cc7-447a-91f0-0d65bc935886",
+		"course_id": 1461901,
+		"name": "Guided Notes: Introduction to Geology part 1",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": true,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": true,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"muted": false,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554264",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 5.0,
+				"description": "Intro to geology: Scientific method and geological time.",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "_712",
+						"points": 4.0,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "_1800",
+						"points": 2.5,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, no objectives, summary less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_1897",
+				"points": 5.0,
+				"description": "What can we learn from a fossil?",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_7771",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_8951",
+						"points": 4.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_41",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary less than 4 sentences."
+					},
+					{
+						"id": "1615819_6092",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677558,
+			"title": "Guided notes (4)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": true,
+		"lock_explanation": "This assignment was locked Aug 26 at 11:59pm.",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554264/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	},
+	{
+		"id": 8554265,
+		"description": "\u003clink rel=\"stylesheet\" href=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cdiv class=\"description user_content teacher-version enhanced\"\u003e\n\u003cp\u003eYou will submit a single word document containing the guided notes for all of the lecture video in this module. Do not upload them separately you must combine them.\u003c/p\u003e\n\u003cp\u003eWhen writing the objectives for the guided notes I want you to write them as short statements using action verbs. I will be looking for more depth to the objectives.\u003c/p\u003e\n\u003cp\u003eExample: \"\u003cstrong\u003eUnderstand\u003c/strong\u003e how the scientific method is an approach to performing science\"\u003c/p\u003e\n\u003cp\u003eAction verbs:\u003c/p\u003e\n\u003cp\u003e\u003cu\u003eKnowledge Level\u003c/u\u003e: Recognize or recall learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px; height: 193px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px; height: 43px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003e\u003cspan style=\"font-style: normal;\"\u003elist \u003c/span\u003e\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"height: 43px; width: 148px;\" scope=\"col\"\u003e\n\u003cp\u003e\u003cspan style=\"font-style: normal;\"\u003erecord\u003c/span\u003e\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px; height: 43px;\" scope=\"col\"\u003e\n\u003cp\u003e\u003cspan style=\"font-style: normal;\"\u003eunderline\u003c/span\u003e\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003estate\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003edefine\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003earrange\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003ename\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003erelate\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003edescribe\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003etell\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003erecall\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003ememorize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003erecall\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003erepeat\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003erecognize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr style=\"height: 30px;\"\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003elabel\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 148px;\"\u003eselect\u003c/td\u003e\n\u003ctd style=\"height: 30px; width: 150px;\"\u003ereproduce\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eComprehension Level\u003c/u\u003e: Restate or interpret information in their own words.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003eexplain\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 148px;\" scope=\"col\"\u003e\n\u003cp\u003edescribe\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003ereport\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003etranslate\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003eexpress\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003esummarize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003eidentify\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003eclassify\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003ediscuss\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003erestate\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003elocate\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003ecompare\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003ediscuss\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003ereview\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003eillustrate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003etell\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003ecritique\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003eestimate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003ereference\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003einterpret\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003ereiterate\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eApplication Level\u003c/u\u003e: Use or apply the learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003eapply\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003esketch\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003eperform\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003euse\u003c/td\u003e\n\u003ctd\u003esolve\u003c/td\u003e\n\u003ctd\u003erespond\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003epractice\u003c/td\u003e\n\u003ctd\u003econstruct\u003c/td\u003e\n\u003ctd\u003erole-play\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edemonstrate\u003c/td\u003e\n\u003ctd\u003econduct\u003c/td\u003e\n\u003ctd\u003eexecute\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecomplete\u003c/td\u003e\n\u003ctd\u003edramatize\u003c/td\u003e\n\u003ctd\u003eemploy\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eAnalysis Level\u003c/u\u003e: Examine the learned information critically.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003eanalyze\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003einspect\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003etest\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edistinguish\u003c/td\u003e\n\u003ctd\u003ecategorize\u003c/td\u003e\n\u003ctd\u003ecritique\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edifferentiate\u003c/td\u003e\n\u003ctd\u003ecatalogue\u003c/td\u003e\n\u003ctd\u003ediagnose\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eappraise\u003c/td\u003e\n\u003ctd\u003equantify\u003c/td\u003e\n\u003ctd\u003eextrapolate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecalculate\u003c/td\u003e\n\u003ctd\u003emeasure\u003c/td\u003e\n\u003ctd\u003etheorize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eexperiment\u003c/td\u003e\n\u003ctd\u003erelate\u003c/td\u003e\n\u003ctd\u003edebate\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eSynthesis Level\u003c/u\u003e: Create new models using the learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003edevelop\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003erevise\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003ecompose\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eplan\u003c/td\u003e\n\u003ctd\u003eformulate\u003c/td\u003e\n\u003ctd\u003ecollect\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ebuild\u003c/td\u003e\n\u003ctd\u003epropose\u003c/td\u003e\n\u003ctd\u003econstruct\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecreate\u003c/td\u003e\n\u003ctd\u003eestablish\u003c/td\u003e\n\u003ctd\u003eprepare\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edesign\u003c/td\u003e\n\u003ctd\u003eintegrate\u003c/td\u003e\n\u003ctd\u003edevise\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eorganize\u003c/td\u003e\n\u003ctd\u003emodify\u003c/td\u003e\n\u003ctd\u003emanage\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eEvaluation Level\u003c/u\u003e: Assess or judge the value of learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003ereview\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003eappraise\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003echoose\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ejustify\u003c/td\u003e\n\u003ctd\u003eargue\u003c/td\u003e\n\u003ctd\u003econclude\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eassess\u003c/td\u003e\n\u003ctd\u003erate\u003c/td\u003e\n\u003ctd\u003ecompare\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edefend\u003c/td\u003e\n\u003ctd\u003escore\u003c/td\u003e\n\u003ctd\u003eevaluate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ereport on\u003c/td\u003e\n\u003ctd\u003eselect\u003c/td\u003e\n\u003ctd\u003einterpret\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003einvestigate\u003c/td\u003e\n\u003ctd\u003emeasure\u003c/td\u003e\n\u003ctd\u003esupport\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
+		"due_at": "2024-08-31T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-09-01T03:59:00Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:27Z",
+		"updated_at": "2024-07-11T16:21:53Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 2,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": 2,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjMzYWNmN2UyLWJiYzgtNGEwMi05ZmUxLThkN2Y5ZDg3ODFmZiIsImx0aV9hc3NpZ25tZW50X2Rlc2NyaXB0aW9uIjoiXHUwMDNjZGl2IGNsYXNzPVwiZGVzY3JpcHRpb24gdXNlcl9jb250ZW50IHRlYWNoZXItdmVyc2lvbiBlbmhhbmNlZFwiXHUwMDNlXG5cdTAwM2NwXHUwMDNlWW91IHdpbGwgc3VibWl0IGEgc2luZ2xlIHdvcmQgZG9jdW1lbnQgY29udGFpbmluZyB0aGUgZ3VpZGVkIG5vdGVzIGZvciBhbGwgb2YgdGhlIGxlY3R1cmUgdmlkZW8gaW4gdGhpcyBtb2R1bGUuIERvIG5vdCB1cGxvYWQgdGhlbSBzZXBhcmF0ZWx5IHlvdSBtdXN0IGNvbWJpbmUgdGhlbS5cdTAwM2MvcFx1MDAzZVxuXHUwMDNjcFx1MDAzZVdoZW4gd3JpdGluZyB0aGUgb2JqZWN0aXZlcyBmb3IgdGhlIGd1aWRlZCBub3RlcyBJIHdhbnQgeW91IHRvIHdyaXRlIHRoZW0gYXMgc2hvcnQgc3RhdGVtZW50cyB1c2luZyBhY3Rpb24gdmVyYnMuIEkgd2lsbCBiZSBsb29raW5nIGZvciBtb3JlIGRlcHRoIHRvIHRoZSBvYmplY3RpdmVzLlx1MDAzYy9wXHUwMDNlXG5cdTAwM2NwXHUwMDNlRXhhbXBsZTogXCJcdTAwM2NzdHJvbmdcdTAwM2VVbmRlcnN0YW5kXHUwMDNjL3N0cm9uZ1x1MDAzZSBob3cgdGhlIHNjaWVudGlmaWMgbWV0aG9kIGlzIGFuIGFwcHJvYWNoIHRvIHBlcmZvcm1pbmcgc2NpZW5jZVwiXHUwMDNjL3BcdTAwM2Vcblx1MDAzY3BcdTAwM2VBY3Rpb24gdmVyYnM6XHUwMDNjL3BcdTAwM2Vcblx1MDAzY3BcdTAwM2VcdTAwM2N1XHUwMDNlS25vd2xlZGdlIExldmVsXHUwMDNjL3VcdTAwM2U6IFJlY29nbml6ZSBvciByZWNhbGwgbGVhcm5lZCBpbmZvcm1hdGlvbi5cdTAwM2MvcFx1MDAzZVxuXHUwMDNjYmxvY2txdW90ZVx1MDAzZVxuXHUwMDNjdGFibGUgc3R5bGU9XCJ3aWR0aDogNDUwcHg7IGhlaWdodDogMTkzcHg7XCIgYm9yZGVyPVwiMVwiIGNlbGxzcGFjaW5nPVwiMFwiIGNlbGxwYWRkaW5nPVwiMFwiXHUwMDNlXG5cdTAwM2N0Ym9keVx1MDAzZVxuXHUwMDNjdHIgc3R5bGU9XCJ3aWR0aDogNDVweDtcIlx1MDAzZVxuXHUwMDNjdGggc3R5bGU9XCJ3aWR0aDogMTUwcHg7IGhlaWdodDogNDNweDtcIiBzY29wZT1cImNvbFwiIGFsaWduPVwibGVmdFwiIHZhbGlnbj1cIm1pZGRsZVwiXHUwMDNlXG5cdTAwM2NwXHUwMDNlXHUwMDNjc3BhbiBzdHlsZT1cImZvbnQtc3R5bGU6IG5vcm1hbDtcIlx1MDAzZWxpc3QgXHUwMDNjL3NwYW5cdTAwM2VcdTAwM2MvcFx1MDAzZVxuXHUwMDNjL3RoXHUwMDNlXG5cdTAwM2N0aCBzdHlsZT1cImhlaWdodDogNDNweDsgd2lkdGg6IDE0OHB4O1wiIHNjb3BlPVwiY29sXCJcdTAwM2Vcblx1MDAzY3BcdTAwM2VcdTAwM2NzcGFuIHN0eWxlPVwiZm9udC1zdHlsZTogbm9ybWFsO1wiXHUwMDNlcmVjb3JkXHUwMDNjLi4uICh0cnVuY2F0ZWQpIn0.iq_CUcHqrqaYrcugcQdHGwlhqKt_7GmeTOoCMu_8UA4",
+		"lti_context_id": "33acf7e2-bbc8-4a02-9fe1-8d7f9d8781ff",
+		"course_id": 1461901,
+		"name": "Guided Notes: Introduction to Geology part 2",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": true,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554265",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 10.0,
+				"description": "Intro to Geology: Minerals, rocks, and Earths layers.",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 10.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "_712",
+						"points": 8.0,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "_1800",
+						"points": 6.0,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677559,
+			"title": "Guided notes (3)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": false,
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554265/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	},
+	{
+		"id": 8554267,
+		"due_at": "2024-09-07T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-09-08T03:59:00Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:28Z",
+		"updated_at": "2024-07-11T16:21:53Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 3,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": 2,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"asset_string": "assignment_8554267",
+			"context_module": {
+				"id": 2696666,
+				"name": "Rocks and minerals",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-08-31T03:59:00Z"
+			}
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjhmYzFjYTEwLWUyZjYtNGI2Yi05NzQzLTYyM2ZjZDRkYWE0ZCJ9.gkMBNMMrBoNZUW2LXQLsi8fbzfz_RlrcYQUDf65IXVc",
+		"lti_context_id": "8fc1ca10-e2f6-4b6b-9743-623fcd4daa4d",
+		"course_id": 1461901,
+		"name": "Guided Notes: Rocks and Minerals",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": false,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"description": null,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554267",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "1575016_9406",
+				"points": 3.34,
+				"description": "Periodic table and mineral groups",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 3.34,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_1998",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615823_1386",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_7537",
+				"points": 3.33,
+				"description": "Silicon minerals and mineral properties",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_3614",
+						"points": 3.33,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_5960",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615823_4214",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_9020",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_3086",
+				"points": 3.33,
+				"description": "Geology: The rock cycle",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_194",
+						"points": 3.33,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_3525",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1575016_1835",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_3203",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677545,
+			"title": "Guided notes - Rocks and Minerals",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": true,
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eRocks and minerals\u003c/b\u003e, which is locked until Aug 30 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696666'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696666/prerequisites/assignment_8554267' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554267/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	},
+	{
+		"id": 8554259,
+		"due_at": "2024-10-05T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-10-06T03:59:00Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:25Z",
+		"updated_at": "2024-07-23T14:43:54Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 4,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": 2,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"asset_string": "assignment_8554259",
+			"context_module": {
+				"id": 2696669,
+				"name": "Plate tectonics and Earthquakes",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-09-21T03:59:00Z"
+			}
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjA5MmQ5YTc3LWUzNDAtNDgzMi1hNmJkLTI2MDNmZTE1M2I0NSJ9.lDJaUMidZUQpzxrabVvnYtecdnLs1etYaCJcCsEU_-4",
+		"lti_context_id": "092d9a77-e340-4832-a6bd-2603fe153b45",
+		"course_id": 1461901,
+		"name": "Guided Notes: Earthquakes",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": false,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"description": null,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554259",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 2.5,
+				"description": "Theories surrounding earthquakes",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "_712",
+						"points": 2.0,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "_1800",
+						"points": 1.5,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_3417",
+				"points": 2.5,
+				"description": "Seafloor spreading and plate tectonics",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_2918",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_7066",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_5200",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_1850",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_9189",
+				"points": 2.5,
+				"description": "Seismic activity",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_2516",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_3641",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_2043",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_8746",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_6906",
+				"points": 2.5,
+				"description": "Documentary: San Andreas fault",
+				"long_description": "Video 4",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_1995",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_1163",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_7657",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_2135",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677556,
+			"title": "Guided notes (5)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": true,
+		"lock_explanation": "This assignment is part of the module \u003cb\u003ePlate tectonics and Earthquakes\u003c/b\u003e, which is locked until Sep 20 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696669'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696669/prerequisites/assignment_8554259' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554259/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	},
+	{
+		"id": 8554261,
+		"due_at": "2024-09-23T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-09-24T03:59:00Z",
+		"points_possible": 20.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:26Z",
+		"updated_at": "2024-07-23T14:43:54Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 5,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": 2,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"asset_string": "assignment_8554261",
+			"context_module": {
+				"id": 2696668,
+				"name": "Geological time (2 weeks)",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-09-07T03:59:00Z"
+			}
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImNlMmEzYTRkLTM3ZDUtNDk1Zi1iNjhmLWNjMTdmMTI2OGJmMyJ9.JNAStgvfICSMdueFli_WIm3XpXtL_QXGQLLUBsqF8Cc",
+		"lti_context_id": "ce2a3a4d-37d5-495f-b68f-cc17f1268bf3",
+		"course_id": 1461901,
+		"name": "Guided Notes: Geological time (10 videos in total)",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": false,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"description": null,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554261",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 2.0,
+				"description": "Geological Time",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_2077",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_8676",
+				"points": 2.0,
+				"description": "That time oxygen almost killed everything",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_6550",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_1228",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_4153",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_2183",
+				"points": 2.0,
+				"description": "When the earth was purple",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_652",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_7558",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_4994",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_3324",
+				"points": 2.0,
+				"description": "A brief history of geological time",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_8766",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_5113",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_3648",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_4028",
+				"points": 2.0,
+				"description": "The search for the earliest life",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_8503",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_6310",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_3798",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_8908",
+				"points": 2.0,
+				"description": "How two microbes changed history",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_9325",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_7098",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_6724",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_5233",
+				"points": 2.0,
+				"description": "The last time the globe warmed",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_4775",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_9681",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_8545",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_6229",
+				"points": 2.0,
+				"description": "From the Cambrian explosion to the great dying",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_7952",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_8527",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_17",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_3879",
+				"points": 2.0,
+				"description": "The other explosion you should you know about",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_1521",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_5485",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_5572",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_1769",
+				"points": 2.0,
+				"description": "From the fall of dinos to the rise of humans",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_5246",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_7402",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_5972",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677542,
+			"title": "Guided notes - Geological time",
+			"points_possible": 20.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": true,
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eGeological time (2 weeks)\u003c/b\u003e, which is locked until Sep 6 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696668'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696668/prerequisites/assignment_8554261' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554261/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	},
+	{
+		"id": 8554268,
+		"due_at": "2024-10-19T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-10-20T03:59:00Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:28Z",
+		"updated_at": "2024-07-23T14:43:55Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 6,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": -1,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"asset_string": "assignment_8554268",
+			"context_module": {
+				"id": 2696671,
+				"name": "Streams and Floods",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-10-05T03:59:00Z"
+			}
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjQxNTQwZjY1LTBmYzYtNDY1My1iYjNjLTNmNDAwNjZiMGJjOSJ9.DAn7OEZVlHKqSbYea9RIyQSVnK1xZgOtt9MQZTlzL94",
+		"lti_context_id": "41540f65-0fc6-4653-bb3c-3f40066b0bc9",
+		"course_id": 1461901,
+		"name": "Guided Notes: Streams and Floods",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": false,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"description": null,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554268",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "1575016_9406",
+				"points": 3.34,
+				"description": "Streams and floods",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 3.34,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_1998",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615822_4117",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_7537",
+				"points": 3.33,
+				"description": "Flood hazards",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_3614",
+						"points": 3.33,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_5960",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615822_5002",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_9020",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_3086",
+				"points": 3.33,
+				"description": "Flood preventatives",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_194",
+						"points": 3.33,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_3525",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1575016_1835",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_3203",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677544,
+			"title": "Guided notes - Streams and Floods",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": true,
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eStreams and Floods\u003c/b\u003e, which is locked until Oct 4 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696671'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696671/prerequisites/assignment_8554268' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554268/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	},
+	{
+		"id": 8554258,
+		"due_at": "2024-10-26T03:59:59Z",
+		"unlock_at": null,
+		"lock_at": "2024-10-26T03:59:59Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:24Z",
+		"updated_at": "2024-07-23T14:34:16Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 7,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": -1,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"asset_string": "assignment_8554258",
+			"context_module": {
+				"id": 2696672,
+				"name": "Coastal Flooding",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-10-12T03:59:00Z"
+			}
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImQyZTY3ZDJlLTk1OTItNDg5My04NDQxLTI0ZTg5MTBhMTYyYiJ9.udDU5ZSWBN1Y0VA52SpmY0UnVBV_OREYDUsx0x57_4M",
+		"lti_context_id": "d2e67d2e-9592-4893-8441-24e8910a162b",
+		"course_id": 1461901,
+		"name": "Guided Notes: Coastal Flooding",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": false,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"description": null,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554258",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 5.0,
+				"description": "Sinking cities: Miami",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": "Completely answers all questions"
+					},
+					{
+						"id": "_712",
+						"points": 3.75,
+						"description": "Partial points",
+						"long_description": "Answers most questions"
+					},
+					{
+						"id": "1615825_9375",
+						"points": 2.5,
+						"description": "Half",
+						"long_description": "Answers half of the questions"
+					},
+					{
+						"id": "1615825_2106",
+						"points": 1.25,
+						"description": "Poor",
+						"long_description": "Answers less than half of the questions"
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_8685",
+				"points": 5.0,
+				"description": "Global Flooding in the next 100 Years",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_564",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": "Completely answers all questions"
+					},
+					{
+						"id": "1575016_2172",
+						"points": 3.75,
+						"description": "Partial points",
+						"long_description": "Answers most questions"
+					},
+					{
+						"id": "1615825_2318",
+						"points": 2.5,
+						"description": "Half",
+						"long_description": "Answers half of the questions"
+					},
+					{
+						"id": "1615825_1284",
+						"points": 1.25,
+						"description": "Poor",
+						"long_description": "Answers less than half of the questions"
+					},
+					{
+						"id": "1575016_1680",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677547,
+			"title": "Guided notes (1)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": true,
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eCoastal Flooding\u003c/b\u003e, which is locked until Oct 11 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696672'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696672/prerequisites/assignment_8554258' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554258/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	},
+	{
+		"id": 8554263,
+		"due_at": "2024-11-02T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-11-03T03:59:59Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:26Z",
+		"updated_at": "2024-07-23T14:43:56Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 8,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": -1,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"asset_string": "assignment_8554263",
+			"context_module": {
+				"id": 2696673,
+				"name": "Glaciers, wind, and deserts",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-10-19T03:59:00Z"
+			}
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6Ijg3NmQyMjI4LTZkOGEtNDVmNS04ZGI1LWRlNDliMDBhNjBmNiJ9.o3eBZckxbNEKwoo5j1dNZVHi6eDGOP7jvRALvNLmAN0",
+		"lti_context_id": "876d2228-6d8a-45f5-8db5-de49b00a60f6",
+		"course_id": 1461901,
+		"name": "Guided Notes: Glaciers, wind, and deserts",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": false,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"description": null,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554263",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 2.5,
+				"description": "Glaciers",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "_712",
+						"points": 2.0,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "_1800",
+						"points": 1.5,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_3644",
+				"points": 2.5,
+				"description": "Why scientists are so worried about this glacier",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_3669",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_4313",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_6890",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_7754",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_9274",
+				"points": 2.5,
+				"description": "Wind",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_3914",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_7610",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_1042",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_7161",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_1085",
+				"points": 2.5,
+				"description": "Deserts",
+				"long_description": "Video 4",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_5099",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_3626",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_6211",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_178",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677557,
+			"title": "Guided notes (6)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": true,
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eGlaciers, wind, and deserts\u003c/b\u003e, which is locked until Oct 18 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696673'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696673/prerequisites/assignment_8554263' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554263/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	},
+	{
+		"id": 8554269,
+		"due_at": "2024-11-16T04:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-11-17T04:59:00Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:29Z",
+		"updated_at": "2024-07-11T16:21:54Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 11,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": 2,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"asset_string": "assignment_8554269",
+			"context_module": {
+				"id": 2696675,
+				"name": "Volcanoes",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-11-08T05:00:00Z"
+			}
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImEzYTBlZDZhLWU3ZjYtNDFiZC1hZTFlLWJhNzQwNzk3NDI5YSJ9.-ahUF88gfgp5fODEoWxHR5sBmL5pJ773sJO3UoVEdA4",
+		"lti_context_id": "a3a0ed6a-e7f6-41bd-ae1e-ba740797429a",
+		"course_id": 1461901,
+		"name": "Guided Notes: Volcanoes",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": false,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"description": null,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554269",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "1575016_8431",
+				"points": 3.0,
+				"description": "Introduction to volcanoes",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 3.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_9456",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615826_5714",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_2331",
+				"points": 3.0,
+				"description": "Types of volcanoes and hazards",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_1148",
+						"points": 3.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_1960",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615826_3815",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_1679",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_9235",
+				"points": 4.0,
+				"description": "Volcano documentary",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_7510",
+						"points": 4.0,
+						"description": "Full Marks",
+						"long_description": "Fully completed the documentary questions"
+					},
+					{
+						"id": "1575016_7094",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Completed half of the documentary questions"
+					},
+					{
+						"id": "1575016_4238",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677548,
+			"title": "Guided notes (2)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": true,
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eVolcanoes\u003c/b\u003e, which is locked until Nov 8 at 12am.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696675'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696675/prerequisites/assignment_8554269' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554269/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	},
+	{
+		"id": 8554257,
+		"due_at": "2024-11-21T04:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-11-22T04:59:00Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:24Z",
+		"updated_at": "2024-07-11T16:21:52Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 17,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": 1,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"asset_string": "assignment_8554257",
+			"context_module": {
+				"id": 2696676,
+				"name": "Climate Change",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-11-08T05:00:00Z"
+			}
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjVlODMyZjMwLTc2ZTctNGJjOC1hZDIyLTc4ZTFiYzgxM2M2ZCJ9.ibMXw5Ynu7Tnmhl0lxuWAO4_YbY6IkKdrbfto_wtaWY",
+		"lti_context_id": "5e832f30-76e7-4bc8-ad22-78e1bc813c6d",
+		"course_id": 1461901,
+		"name": "Guided Notes: Climate change",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": false,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"description": null,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554257",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "1575016_6066",
+				"points": 2.0,
+				"description": "GH Effect",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Main topics AND terminology/additional notes included. 1 pt each. Summary not required."
+					},
+					{
+						"id": "1575016_2322",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing topics or notes"
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_8407",
+				"points": 2.0,
+				"description": "Climate 101",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_3351",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Main topics AND terminology/additional notes included. 1 pt each. Summary not required."
+					},
+					{
+						"id": "1575016_1185",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing topics or notes"
+					},
+					{
+						"id": "1575016_7788",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_7743",
+				"points": 2.0,
+				"description": "Climate oceans and ice",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_6655",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Main topics AND terminology/additional notes included. 1 pt each. Summary not required."
+					},
+					{
+						"id": "1575016_3635",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing topics or notes"
+					},
+					{
+						"id": "1575016_9025",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_7729",
+				"points": 2.0,
+				"description": "Air pollution 101",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_7782",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Main topics AND terminology/additional notes included. 1 pt each. Summary not required."
+					},
+					{
+						"id": "1575016_8970",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing topics or notes"
+					},
+					{
+						"id": "1575016_3423",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_9548",
+				"points": 2.0,
+				"description": "Light pollution 101",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_8799",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Main topics AND terminology/additional notes included. 1 pt each. Summary not required."
+					},
+					{
+						"id": "1575016_1501",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing topics or notes"
+					},
+					{
+						"id": "1575016_6677",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677550,
+			"title": "Guided notes- Climate Change",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": true,
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eClimate Change\u003c/b\u003e, which is locked until Nov 8 at 12am.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696676'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696676/prerequisites/assignment_8554257' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554257/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	}
+]

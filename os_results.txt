@@ -1,0 +1,81 @@
+null
+		"due_at": "2024-10-02T03:59:00Z",
+		"name": "PA#1 - The ChatGPT Scheduler",
+		"id": 8608633,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": false,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-11-13T04:59:00Z",
+		"name": "PA#2 - Concurrent Hash Table (groups enabled)",
+		"id": 8608634,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": false,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-08-26T03:59:00Z",
+		"name": "Course Expectations Survey",
+		"id": 8608630,
+		"has_submitted_submissions": true,
+		"is_quiz_assignment": false,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-08-26T03:59:00Z",
+		"name": "Quiz 1 - Introduction to Operating Systems",
+		"id": 8608607,
+		"has_submitted_submissions": true,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-09-02T03:59:00Z",
+		"name": "Quiz 2 - Process Schedulers",
+		"id": 8608620,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-09-09T03:59:00Z",
+		"name": "Quiz 3 - Virtual Memory",
+		"id": 8608624,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-09-16T03:59:00Z",
+		"name": "Quiz 4 - Paging and the TLB",
+		"id": 8608605,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-09-30T03:59:00Z",
+		"name": "Quiz 5 - Freespace Management, Paging, Swapping",
+		"id": 8608631,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-10-12T03:59:00Z",
+		"name": "Quiz 6 - Threads and Locks",
+		"id": 8608613,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	},
+	{
+		"due_at": "2024-10-21T03:59:00Z",
+		"name": "Quiz 8 - Concurrency Bugs",
+		"id": 8608621,
+		"has_submitted_submissions": false,
+		"is_quiz_assignment": true,
+		"require_lockdown_browser": false
+	}
+]

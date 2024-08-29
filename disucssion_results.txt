@@ -1,0 +1,254 @@
+[
+	{
+		"due_at": "",
+		"title": "Discussion: Photos of history scavenger hunt",
+		"id": 7761148,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-11-04T04:59:00Z",
+			"name": "Discussion: Photos of history scavenger hunt",
+			"id": 8554254,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Case study: Moving to Higher Ground? Ecosystems, Economics and Equity in the Floodplain",
+		"id": 7761147,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-10-21T03:59:00Z",
+			"name": "Case study: Moving to Higher Ground? Ecosystems, Economics and Equity in the Floodplain",
+			"id": 8554253,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Case study: Moving to Higher Ground? Ecosystems, Economics and Equity in the Floodplain Part 2",
+		"id": 7761146,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-10-28T03:59:00Z",
+			"name": "Case study: Moving to Higher Ground? Ecosystems, Economics and Equity in the Floodplain Part 2",
+			"id": 8554252,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Discussion: Where Are Earthquakes Happening Right Now?",
+		"id": 7761145,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-10-07T03:59:00Z",
+			"name": "Discussion: Where Are Earthquakes Happening Right Now?",
+			"id": 8554251,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Introductions",
+		"id": 7761144,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-08-26T03:59:00Z",
+			"name": "Introductions",
+			"id": 8554250,
+			"has_submitted_submissions": true,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Discussion on Documentary: Killer volcanoes",
+		"id": 7761143,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-11-18T04:59:00Z",
+			"name": "Discussion on Documentary: Killer volcanoes",
+			"id": 8554249,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Case study: The Moon: What’s It Made of? Where Did It Come From? Part III or IV",
+		"id": 7761142,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-09-02T03:59:00Z",
+			"name": "Case study: The Moon: What’s It Made of? Where Did It Come From? Part III or IV",
+			"id": 8554248,
+			"has_submitted_submissions": true,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Case study: “It’s a Crocodile! No, a Fish! No, a Dolphin! Interpreting Evolutionary History from Fossil Evidence”",
+		"id": 7761141,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-08-26T03:59:00Z",
+			"name": "Case study: “It’s a Crocodile! No, a Fish! No, a Dolphin! Interpreting Evolutionary History from Fossil Evidence”",
+			"id": 8554247,
+			"has_submitted_submissions": true,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Case study: Is It a Meteorite? Applying Problem-Solving Strategy to Mass Spectra and Atomic Mass",
+		"id": 7761140,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-09-09T03:59:00Z",
+			"name": "Case study: Is It a Meteorite? Applying Problem-Solving Strategy to Mass Spectra and Atomic Mass",
+			"id": 8554246,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Exam 1: Study guide discussion",
+		"id": 7761139,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-09-13T03:59:00Z",
+			"name": "Exam 1: Study guide discussion",
+			"id": 8554245,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Mini-research project: Geological time",
+		"id": 7761138,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-09-30T03:59:00Z",
+			"name": "Mini-research project: Geological time",
+			"id": 8554244,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Exam 2: Study guide discussion",
+		"id": 7761137,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-10-11T03:59:00Z",
+			"name": "Exam 2: Study guide discussion",
+			"id": 8554243,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Exam 3: Study guide discussion ",
+		"id": 7761136,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-11-08T04:59:00Z",
+			"name": "Exam 3: Study guide discussion ",
+			"id": 8554242,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Exam 4: Study guide discussion ",
+		"id": 7761135,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-11-26T04:59:00Z",
+			"name": "Exam 4: Study guide discussion ",
+			"id": 8554241,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Mini-research project: Climate change",
+		"id": 7761134,
+		"description": "",
+		"assignment": {
+			"due_at": "2024-11-25T04:59:00Z",
+			"name": "Mini-research project: Climate change",
+			"id": 8554240,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Student lounge: Module 1",
+		"id": 7761132,
+		"description": "",
+		"assignment": {
+			"due_at": "",
+			"name": "",
+			"id": 0,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Student lounge: Module 2",
+		"id": 7761131,
+		"description": "",
+		"assignment": {
+			"due_at": "",
+			"name": "",
+			"id": 0,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	},
+	{
+		"due_at": "",
+		"title": "Student lounge: Module 3",
+		"id": 7761130,
+		"description": "",
+		"assignment": {
+			"due_at": "",
+			"name": "",
+			"id": 0,
+			"has_submitted_submissions": false,
+			"is_quiz_assignment": false,
+			"require_lockdown_browser": false
+		}
+	}
+]
