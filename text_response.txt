@@ -1,884 +1,16 @@
-{
-	"status": "unauthorized",
-	"errors": [
-		{
-			"message": "user not authorized to perform that action"
-		}
-	]
-}naws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cdiv id=\"content\"\u003e\n\u003ch2 id=\"introduction\"\u003eIntroduction\u003c/h2\u003e\n\u003cp\u003eYou are tasked with implementing three process scheduling algorithms: FIFO (First In, First Out), Pre-emptive SJF (Shortest Job First), and Round Robin in Python, but using ChatGPT. ChatGPT's implementation should be able to simulate the scheduling of multiple processes under each algorithm and calculate their turnaround time, response time, and wait time.\u003c/p\u003e\n\u003cp\u003eChatGPT's implementation should include the following components:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eA data structure to represent a process, including its arrival time, execution time, and status.\u003c/li\u003e\n\u003cli\u003eA scheduler function for each algorithm that takes in a list of processes and implements the chosen scheduling algorithm.\u003c/li\u003e\n\u003cli\u003eA time slice parameter (Q-value) for Round Robin, which determines how long each process should be allowed to run before being preempted.\u003c/li\u003e\n\u003cli\u003eA function to calculate our standard metrics: turnaround time, waiting time, and response time for each process.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eYou will be provided with test inputs and outputs to use as a benchmark for your results.\u003c/p\u003e\n\u003cp\u003eEach member of your team will be responsible for providing at least one prompt. You are allowed multiple iterations. You may continue to refine your prompt as much as necessary in order to get desirable results. You are encouraged to compare prompts as a team to arrive at a \"best solution\" for final submission. However, you will be required to keep and track your prompt history (see below).\u003c/p\u003e\n\u003cp\u003eAt some point, it may seem like continuing prompt iteration yields diminishing returns. At your discretion, you may choose to stop prompting and complete the project on your own. Ideally, human-written code would be limited to output formatting and other superficial, minor tweaks. However, there may be some features or aspects of the project which perhaps ChatGPT refuses to generate. These should be clearly documented. All cases of human-generated code should be commented as such.\u003c/p\u003e\n\u003cp\u003eFinally, as a caution -- ChatGPT, at least as implemented at OpenAI.com, will occasionally refuse to generate code literally telling you that it can't. You can rephrase your prompt or even just ask it to carry it out regardless (\"You've done this before. Please do it now\").\u003c/p\u003e\n\u003ch2 id=\"input-file-format\"\u003eInput File Format\u003c/h2\u003e\n\u003cp\u003eExample:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eprocesscount 3  # Read 3 processes\nrunfor 20       # Run for 20 time units\nuse sjf\nprocess name A arrival 0 burst 5\nprocess name B arrival 1 burst 4\nprocess name C arrival 4 burst 2\nend\u003c/code\u003e\u003c/pre\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth id=\"directive\"\u003edirective\u003c/th\u003e\n\u003cth id=\"definition\"\u003edefinition\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eprocesscount\u003c/td\u003e\n\u003ctd\u003eNumber of processes in the list\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003erunfor\u003c/td\u003e\n\u003ctd\u003eHow many time ticks to run in total\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003euse\u003c/td\u003e\n\u003ctd\u003eThe algorithm to use. Valid values: fcfs, sjf, rr\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003equantum\u003c/td\u003e\n\u003ctd\u003e(for rr only) length of the quantum in time ticks\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eprocess\u003c/td\u003e\n\u003ctd\u003esee below\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eend\u003c/td\u003e\n\u003ctd\u003eend of file marker\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eThe process takes three named parameters:\u003cbr\u003e\u003cstrong\u003ename:\u003c/strong\u003e The name of your process. This can be any valid string.\u003cbr\u003e\u003cstrong\u003earrival:\u003c/strong\u003e The arrival time of the process\u003cbr\u003e\u003cstrong\u003eburst:\u003c/strong\u003e Total burst time\u003c/p\u003e\n\u003cp\u003eRemember to check the validity of the use and quantum parameters:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eIf use specifies 'rr' and there is no quantum specified, print an error message and exit.\u003c/li\u003e\n\u003cli\u003eIn general, if any of the required parameters are missing, print an error and exit.\n\u003cul\u003e\n\u003cli\u003eError message should be in the form of: \u0026nbsp;Error: Missing parameter \u0026lt;parameter\u0026gt;.\u003c/li\u003e\n\u003cli\u003eIn the case of missing quantum parameter when use is 'rr' print: \u0026nbsp;Error: Missing quantum parameter when use is 'rr'\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eIf the input file is not provided:\n\u003cul\u003e\n\u003cli\u003ePrint a usage message: \u0026nbsp; Usage: scheduler-get.py \u0026lt;input file\u0026gt;\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"output-file-format\"\u003eOutput File Format\u003c/h2\u003e\n\u003cp\u003eExample:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e3 processes\nUsing preemptive Shortest Job First\nTime   0 : A arrived\nTime   0 : A selected (burst   5)\nTime   1 : B arrived\nTime   4 : C arrived\nTime   5 : A finished\nTime   5 : C selected (burst   2)\nTime   7 : C finished\nTime   7 : B selected (burst   4)\nTime  11 : B finished\nTime  11 : Idle\nTime  12 : Idle\nTime  13 : Idle\nTime  14 : Idle\nTime  15 : Idle\nTime  16 : Idle\nTime  17 : Idle\nTime  18 : Idle\nTime  19 : Idle\nFinished at time  20\n\nA wait   0 turnaround   5  response 0\nB wait   6 turnaround  10  response 6\nC wait   1 turnaround   3\u003c/code\u003e response 1\u003c/pre\u003e\n\u003cp\u003eOutput must include all of the following:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eNumber of processes\u003c/li\u003e\n\u003cli\u003eThe algorithm used\u003c/li\u003e\n\u003cli\u003eWhen Round Robin is selected, print the Quantum on a separate line immediately following the display of the algorithm used.\u003c/li\u003e\n\u003cli\u003eEvery time tick which experiences an event (i.e. processes arrived, selected, and finished)\u003c/li\u003e\n\u003cli\u003eWhen the CPU is not used, print \"Idle\"\u003c/li\u003e\n\u003cli\u003eNote the last time tick.\u003c/li\u003e\n\u003cli\u003eIn your experimentation, you may have processes that don't complete within the given runtime. List those unfinished processes on the final summary line as\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode\u003eP1 did not finish\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe sample output shows all numerical outputs neatly right-justified. You do not need to do so. Whitespace between elements will suffice without fancy alignment. i.e.:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eTime  1\nTime  10\u003c/code\u003e\u003c/pre\u003e\n\u003ch2 id=\"handling-input-and-output\"\u003eHandling input and output\u003c/h2\u003e\n\u003ch3 id=\"input\"\u003eInput\u003c/h3\u003e\n\u003cp\u003eYour script must accept a single command-line parameter for the input filename. i.e.:\u003cbr\u003e\u003ccode\u003escheduler-gpt.py inputFile.in\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eFilename must be the only and \u003cem\u003erequired\u003c/em\u003e parameter. The input filename should have the extension of \".in\".\u003c/p\u003e\n\u003ch3 id=\"output\"\u003eOutput\u003c/h3\u003e\n\u003cp\u003eYour script will write out the output file as the base filename with the extension of \".out\" i.e.:\u003cbr\u003e\u003ccode\u003einputFile.in\u003c/code\u003e should result in an output file called \u003ccode\u003einputFile.out\u003c/code\u003e\u003c/p\u003e\n\u003ch2\u003eTest Files\u003c/h2\u003e\n\u003ch2 id=\"introduction\"\u003e\u003ca class=\"instructure_file_link inline_disabled\" title=\"pa1-testfiles.zip\" href=\"https://webcourses.ucf.edu/courses/1464092/files/108530900?verifier=Rb3OYIXTsvur87vCP7uOg6QG0Eaxm94p4gd93OCO\u0026amp;wrap=1\" target=\"_blank\" data-canvas-previewable=\"false\" data-api-endpoint=\"https://webcourses.ucf.edu/api/v1/courses/1464092/files/108530900\" data-api-returntype=\"File\"\u003epa1-testfiles.zip\u003c/a\u003e\u003c/h2\u003e\n\u003ch2 id=\"deliverables\"\u003eDeliverables\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eEach member of the team must provide link(s) to their conversation history. We want to see how the discussion evolves over time as you refine your query. Each individual conversation should be submitted as a link to chat.openai.com:\u003cbr\u003e\n\u003cul\u003e\n\u003cli\u003eEach conversation is listed on the left-hand side.\u0026nbsp; Each entry has a menu button.\u0026nbsp; Select that, and then select \"Share.\"\u0026nbsp; You can then copy a link to the conversation.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eThe team will then evaluate each conversation and determine the best path forward to the final code.\u0026nbsp; This could be by picking the best result from the conversations submitted or it could be a hybrid of all of them.\u0026nbsp; Whatever method is chosen, it should be documented and justified.\u0026nbsp; Why and how did you arrive at the final result?\u0026nbsp; This should be documented in your final report.\u003c/li\u003e\n\u003cli\u003eThe final report in which the team evaluates not only the final output, but the process of coding via generative AI. Only a single report is required for the entire team, in either Word or PDF format. All team members should be listed at the top followed by all links to the ChatGPT conversations.\u0026nbsp; It should be titled \"Group-N Final Report.docx\" (or .pdf) where N is your Group Number.\u0026nbsp; See below for the evaluation rubric.\u003c/li\u003e\n\u003cli\u003eThe final code to be evaluated as a single Python file named \u003ccode\u003escheduler-gpt.py\u003c/code\u003e Team member names should be listed at the top of the file as comments.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"evaluation-of-ai-code\"\u003eEvaluation of AI Code\u003c/h2\u003e\n\u003cp\u003eWhen evaluating AI-generated code, it's important to keep in mind that the code may not always be optimal or free of errors, and that human review is still necessary to ensure that the code meets the intended criteria and requirements. You will provide a written report of your team's evaluation of ChatGPT's output using the following rubric:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003eCorrectness: Does the code perform the intended task correctly? Are there any bugs or errors that need to be fixed?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eEfficiency: Is the code efficient and avoid unnecessary computations or data structures? Can the code be optimized for better performance?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eReadability: Is the code well-organized, well-documented, and easy to understand? Does the code follow best practices such as using meaningful variable names, avoiding code duplication, and use a consistent coding style between prompts?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eCompleteness: Does the code handle edge cases and error conditions appropriately? Is the code flexible enough to handle different input data and scenarios? What happens when you don't feed it an input file or a malformed input file? Does the code account for race conditions (i.e. when two processes can technically be scheduled at the same time)?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eInnovation: Does the code offer any new or innovative approaches or ideas for solving the problem at hand? Does the code leverage any new or emerging technologies or frameworks?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eOverall Quality and Final Recommendation: Based on the above criteria, how would you rate the overall quality of the code? Would you recommend any changes or improvements to make the code more effective or efficient? How would you rate your overall experience writing code using the assistance of an AI? Was it easier or harder than you expected? What did you learn through the process? What would you do differently if you had to write code via AI again?\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2 id=\"grading-rubric\"\u003eGrading Rubric\u003c/h2\u003e\n\u003ch3 id=\"correctness-of-final-code-30-points\"\u003eCorrectness of Final Code (30 points)\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eIn order to avoid low-effort prompts and to encourage good code generation, your final output will be run against sample files and tested for their correctness. Your code will be run once against each of the algorithms. 10 points for each algorithm. Points will be deduced for incorrect outputs.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"prompt-and-conversation-submissions-from-all-members-10-points\"\u003ePrompt and Conversation Submissions from all Members (10 points)\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e4 points for all members contributing conversations, proportional points for partial submissions.\u003c/li\u003e\n\u003cli\u003e6 points for quality of conversations demonstrating an iterative process of refinement along with well-reasoned and well-documented explanations for how the final product came to be.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"addressing-each-point-of-evaluation-60-points-total\"\u003eAddressing Each Point of Evaluation (60 points total)\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e10 points each. Points will be awarded on the basis of coherence and insight. Full points will demonstrate engagement with the topic and thoughtful, well-written response.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"bonus-points-10-points\"\u003eBonus Points (10 points)\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eGenerated Code implements novel features such as:\n\u003cul\u003e\n\u003cli\u003eEnhanced output rendering. This can be through the use of HTML, Markdown, or terminal codes to implement tables, colored text, or even animation.\u003c/li\u003e\n\u003cli\u003eOther scheduling algorithms like Linux's CFS.\u003c/li\u003e\n\u003cli\u003eEnhanced interface like a GUI.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eUser-generated code may also implement new features. As this assignment is in its beta test stage, I would eventually like to compare the efficiency of AI-generated base code with human-written enhancements versus trying to let the AI write all of the code. Which is easier and/or faster?\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
-		"due_at": "2024-10-02T03:59:00Z",
+[
+	{
+		"id": 8677439,
+		"description": "\u003clink rel=\"stylesheet\" href=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cp\u003ePlease begin reading Chapter 1 from your book.\u003c/p\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
+		"due_at": null,
 		"unlock_at": null,
 		"lock_at": null,
-		"points_possible": 100.0,
+		"points_possible": 0.0,
 		"grading_type": "points",
-		"assignment_group_id": 2252308,
+		"assignment_group_id": 2245970,
 		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:23:27Z",
-		"updated_at": "2024-08-21T14:28:46Z",
-		"peer_reviews": false,
-		"automatic_peer_reviews": false,
-		"position": 1,
-		"grade_group_students_individually": false,
-		"anonymous_peer_reviews": false,
-		"group_category_id": 132883,
-		"post_to_sis": false,
-		"moderated_grading": false,
-		"omit_from_final_grade": false,
-		"intra_group_peer_reviews": false,
-		"anonymous_instructor_annotations": false,
-		"anonymous_grading": false,
-		"graders_anonymous_to_graders": false,
-		"grader_count": 0,
-		"grader_comments_visible_to_graders": true,
-		"final_grader_id": null,
-		"grader_names_visible_to_final_grader": true,
-		"allowed_attempts": -1,
-		"annotatable_attachment_id": null,
-		"hide_in_gradebook": false,
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6Ijg1NWZmMWJmLTFhOWQtNDY2Ny04YzRhLTU1ZjA1NTdiZDcyNSIsImx0aV9hc3NpZ25tZW50X2Rlc2NyaXB0aW9uIjoiXHUwMDNjZGl2IGlkPVwiY29udGVudFwiXHUwMDNlXG5cdTAwM2NoMiBpZD1cImludHJvZHVjdGlvblwiXHUwMDNlSW50cm9kdWN0aW9uXHUwMDNjL2gyXHUwMDNlXG5cdTAwM2NwXHUwMDNlWW91IGFyZSB0YXNrZWQgd2l0aCBpbXBsZW1lbnRpbmcgdGhyZWUgcHJvY2VzcyBzY2hlZHVsaW5nIGFsZ29yaXRobXM6IEZJRk8gKEZpcnN0IEluLCBGaXJzdCBPdXQpLCBQcmUtZW1wdGl2ZSBTSkYgKFNob3J0ZXN0IEpvYiBGaXJzdCksIGFuZCBSb3VuZCBSb2JpbiBpbiBQeXRob24sIGJ1dCB1c2luZyBDaGF0R1BULiBDaGF0R1BUJ3MgaW1wbGVtZW50YXRpb24gc2hvdWxkIGJlIGFibGUgdG8gc2ltdWxhdGUgdGhlIHNjaGVkdWxpbmcgb2YgbXVsdGlwbGUgcHJvY2Vzc2VzIHVuZGVyIGVhY2ggYWxnb3JpdGhtIGFuZCBjYWxjdWxhdGUgdGhlaXIgdHVybmFyb3VuZCB0aW1lLCByZXNwb25zZSB0aW1lLCBhbmQgd2FpdCB0aW1lLlx1MDAzYy9wXHUwMDNlXG5cdTAwM2NwXHUwMDNlQ2hhdEdQVCdzIGltcGxlbWVudGF0aW9uIHNob3VsZCBpbmNsdWRlIHRoZSBmb2xsb3dpbmcgY29tcG9uZW50czpcdTAwM2MvcFx1MDAzZVxuXHUwMDNjb2xcdTAwM2Vcblx1MDAzY2xpXHUwMDNlQSBkYXRhIHN0cnVjdHVyZSB0byByZXByZXNlbnQgYSBwcm9jZXNzLCBpbmNsdWRpbmcgaXRzIGFycml2YWwgdGltZSwgZXhlY3V0aW9uIHRpbWUsIGFuZCBzdGF0dXMuXHUwMDNjL2xpXHUwMDNlXG5cdTAwM2NsaVx1MDAzZUEgc2NoZWR1bGVyIGZ1bmN0aW9uIGZvciBlYWNoIGFsZ29yaXRobSB0aGF0IHRha2VzIGluIGEgbGlzdCBvZiBwcm9jZXNzZXMgYW5kIGltcGxlbWVudHMgdGhlIGNob3NlbiBzY2hlZHVsaW5nIGFsZ29yaXRobS5cdTAwM2MvbGlcdTAwM2Vcblx1MDAzY2xpXHUwMDNlQSB0aW1lIHNsaWNlIHBhcmFtZXRlciAoUS12YWx1ZSkgZm9yIFJvdW5kIFJvYmluLCB3aGljaCBkZXRlcm1pbmVzIGhvdyBsb25nIGVhY2ggcHJvY2VzcyBzaG91bGQgYmUgYWxsb3dlZCB0byBydW4gYmVmb3JlIGJlaW5nIHByZWVtcHRlZC5cdTAwM2MvbGlcdTAwM2Vcblx1MDAzY2xpXHUwMDNlQSBmdW5jdGlvbiB0byBjYWxjdWxhdGUgb3VyIHN0YW5kYXJkIG1ldHJpY3M6IHR1cm5hcm91bmQgdGltZSwgd2FpdGluZyB0aW1lLCBhbmQgcmVzcG9uc2UgdGltZS4uLiAodHJ1bmNhdGVkKSJ9.IHO7KwLJVFIg7SXzOTVV---NAC6VLco127DzSmb4YhE",
-		"lti_context_id": "855ff1bf-1a9d-4667-8c4a-55f0557bd725",
-		"course_id": 1464092,
-		"name": "PA#1 - The ChatGPT Scheduler",
-		"submission_types": [
-			"online_upload"
-		],
-		"has_submitted_submissions": false,
-		"due_date_required": false,
-		"max_name_length": 255,
-		"in_closed_grading_period": false,
-		"graded_submissions_exist": false,
-		"is_quiz_assignment": false,
-		"can_duplicate": true,
-		"original_course_id": null,
-		"original_assignment_id": null,
-		"original_lti_resource_link_id": null,
-		"original_assignment_name": null,
-		"original_quiz_id": null,
-		"workflow_state": "published",
-		"important_dates": false,
-		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608633",
-		"allowed_extensions": [
-			"docx",
-			"pdf",
-			"py",
-			"html",
-			"txt",
-			"md",
-			"zip"
-		],
-		"use_rubric_for_grading": false,
-		"free_form_criterion_comments": false,
-		"rubric": [
-			{
-				"id": "_3647",
-				"points": 3.0,
-				"description": "Scheduler runs 2-process load on FCFS",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "blank",
-						"points": 3.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "blank_2",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_3559",
-				"points": 3.0,
-				"description": "Scheduler Runs 5-process load on FCFS",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_8825",
-						"points": 3.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_7129",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_3910",
-				"points": 3.0,
-				"description": "Scheduler runs 10-process load on RR",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_9661",
-						"points": 3.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_6128",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_9517",
-				"points": 3.0,
-				"description": "Scheduler runs 2-process load on SFJ (non-preemptive)",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_9781",
-						"points": 3.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_6501",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_1073",
-				"points": 3.0,
-				"description": "Scheduler Runs 5-process load on SFJ (non-preemptive)",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_2665",
-						"points": 3.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_1923",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_2774",
-				"points": 3.0,
-				"description": "Scheduler runs 10-process load on SFJ (non-preemptive)",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_5977",
-						"points": 3.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_880",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_4994",
-				"points": 3.0,
-				"description": "Scheduler runs 2-process load on RR",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_1186",
-						"points": 3.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_799",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_4702",
-				"points": 3.0,
-				"description": "Scheduler Runs 5-process load on RR",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_1094",
-						"points": 3.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_3708",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_9201",
-				"points": 3.0,
-				"description": "Scheduler runs 10-process load on RR",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_9686",
-						"points": 3.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_2564",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_2215",
-				"points": 1.0,
-				"description": "FCFS completes flawlessly",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_6439",
-						"points": 1.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_8777",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_5308",
-				"points": 1.0,
-				"description": "SJF completes flawlessly",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_2045",
-						"points": 1.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_6861",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_3422",
-				"points": 1.0,
-				"description": "RR completes flawlessly",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_7291",
-						"points": 1.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_6464",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_3190",
-				"points": 4.0,
-				"description": "All team members contributed at least one ChatGPT conversation",
-				"long_description": "Give proportional points if some members did not participate.  i.e., if half contributed, give 2/4 pts, if one didn\u0026#39;t participate, 1/4, etc.",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_4120",
-						"points": 4.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_3897",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_4706",
-				"points": 6.0,
-				"description": "ChatGPT Conversation Quality",
-				"long_description": "6 points for quality of conversations demonstrating an iterative process of refinement along with well-reasoned and well-documented explanations for how the final product came to be.",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_7188",
-						"points": 6.0,
-						"description": "Full Marks - Evidence of iteration accompanied by discussion",
-						"long_description": "Multiple prompts were attempted showing a clear progression of conversation with ChatGPT.  Prompts are accompanied by a discussion explaining their reasoning as to why they chose the prompts and how they decided when to stop prompting."
-					},
-					{
-						"id": "_3669",
-						"points": 4.0,
-						"description": "Adequate iteration, no discussion",
-						"long_description": "The team supplied a conversation that does show an attempt at engaging with ChatGPT, but failed to provide any discussion describing their iterative process."
-					},
-					{
-						"id": "_9878",
-						"points": 2.0,
-						"description": "Minimal iteration, no discussion",
-						"long_description": "There's minimal evidence that the team engaged with ChatGPT in an iterative fashion.  They may have provided one or two different prompts, but did not provide any explanatory text or discussion of their iteration process."
-					},
-					{
-						"id": "_7035",
-						"points": 0.0,
-						"description": "Did not engage with ChatGPT at all",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_937",
-				"points": 10.0,
-				"description": "Evaluating the AI - Correctness",
-				"long_description": "Does the code perform the intended task correctly? Are there any bugs or errors that need to be fixed?",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_3217",
-						"points": 10.0,
-						"description": "Full Marks - Answered the questions with a detailed description of AI output and their response.",
-						"long_description": "Answered both questions and additionally provided a detailed description of how ChatGPT did or did not meet their objectives.  Description should include specifics on what code needed to be fixed and how they addressed it (whether by fixing it themselves or adjusting their prompting)."
-					},
-					{
-						"id": "_9325",
-						"points": 7.0,
-						"description": "Addressed the questions, but provided minimal description.",
-						"long_description": "Answered both questions, but did not provide much detail as to how the team addressed the issues.  Some description is present of the team response, but it's vague."
-					},
-					{
-						"id": "_7801",
-						"points": 5.0,
-						"description": "Answered both questions, but provided no additional details",
-						"long_description": "Answered both questions, but did not provide a description of how the team responded to the AI's failures."
-					},
-					{
-						"id": "_226",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_2249",
-				"points": 10.0,
-				"description": "Evaluating the AI - Efficiency",
-				"long_description": "Is the code efficient and avoid unnecessary computations or data structures? Can the code be optimized for better performance?",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_1794",
-						"points": 10.0,
-						"description": "Full Marks",
-						"long_description": "This is a tough one and for now, we'll use a binary evaluation.  Full points if they addressed the issue, none otherwise."
-					},
-					{
-						"id": "_4782",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_3994",
-				"points": 10.0,
-				"description": "Evaluating the AI - Readability",
-				"long_description": "Is the code well-organized, well-documented, and easy to understand? Does the code follow best practices such as using meaningful variable names, avoiding code duplication, and use a consistent coding style between prompts?",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_3008",
-						"points": 10.0,
-						"description": "Full Marks - All points addressed with some discussion on their findings",
-						"long_description": "All questions answered with good descriptions of the AI output, supported by meaningful discussion and/or interpretation of the AI output."
-					},
-					{
-						"id": "_2635",
-						"points": 7.0,
-						"description": "Addressed most of the points",
-						"long_description": "Most of the points were addressed with meaningful discussion.  They answered the question and provided some kind of commentary.  \"The code was easy to follow because it used verbose comments.\"  or \"The variable names made sense and were easy to read because it used camelCase\". Some points may have been missed or not addressed."
-					},
-					{
-						"id": "_9139",
-						"points": 5.0,
-						"description": "Answered the questions, but did not provide additional description or discussion",
-						"long_description": "Answered the questions, but did not elaborate or interpret further.  i.e. \"The code was easy to understand and follow.  The code used meaningful variable names.\"  etc."
-					},
-					{
-						"id": "_41",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_8111",
-				"points": 10.0,
-				"description": "Evaluating the AI - Innovation",
-				"long_description": "Does the code offer any new or innovative approaches or ideas for solving the problem at hand? Does the code leverage any new or emerging technologies or frameworks?",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_17",
-						"points": 10.0,
-						"description": "Full Marks",
-						"long_description": "This is another binary evaluation as the question didn't prompt for further elaboration."
-					},
-					{
-						"id": "_9703",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_1206",
-				"points": 10.0,
-				"description": "Evaluating the AI - Final Evaluation",
-				"long_description": "Based on the above criteria, how would you rate the overall quality of the code? Would you recommend any changes or improvements to make the code more effective or efficient? How would you rate your overall experience writing code using the assistance of an AI? Was it easier or harder than you expected? What did you learn through the process? What would you do differently if you had to write code via AI again?",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_8422",
-						"points": 10.0,
-						"description": "Full Marks - All points addressed with some discussion on their findings",
-						"long_description": "All questions answered with good descriptions of the AI output, supported by meaningful discussion and/or interpretation of the AI output."
-					},
-					{
-						"id": "_7238",
-						"points": 7.0,
-						"description": "Addressed most of the points",
-						"long_description": "Most of the points were addressed with meaningful discussion.  They answered the question and provided some kind of commentary.  \"The code was easy to follow because it used verbose comments.\"  or \"The variable names made sense and were easy to read because it used camelCase\". Some points may have been missed or not addressed."
-					},
-					{
-						"id": "_3159",
-						"points": 5.0,
-						"description": "Answered the questions, but did not provide additional description or discussion",
-						"long_description": "Answered the questions, but did not elaborate or interpret further.  i.e. \"The code was easy to understand and follow.  The code used meaningful variable names.\"  etc."
-					},
-					{
-						"id": "_2654",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_7799",
-				"points": 10.0,
-				"description": "Evaluating the AI - Completeness",
-				"long_description": "Does the code handle edge cases and error conditions appropriately? Is the code flexible enough to handle different input data and scenarios? What happens when you don\u0026#39;t feed it an input file or a malformed input file? Does the code account for race conditions (i.e. when two processes can technically be scheduled at the same time)?",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_4674",
-						"points": 10.0,
-						"description": "Full Marks - All points addressed with some discussion on their findings",
-						"long_description": "All questions answered with good descriptions of the AI output, supported by meaningful discussion and/or interpretation of the AI output."
-					},
-					{
-						"id": "_3086",
-						"points": 7.0,
-						"description": "Addressed most of the points",
-						"long_description": "Most of the points were addressed with meaningful discussion.  They answered the question and provided some kind of commentary.  \"The code didn't initially account for error conditions, but after prompting it added them.\"  or \"The code handled race conditions well by adding checks for when two processes might conflict\". Some points may have been missed or not addressed."
-					},
-					{
-						"id": "_6410",
-						"points": 5.0,
-						"description": "Answered the questions, but did not provide additional description or discussion",
-						"long_description": "Answered the questions, but did not elaborate or interpret further.  i.e. \"The code didn't handle any errors.\""
-					},
-					{
-						"id": "_5999",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			}
-		],
-		"rubric_settings": {
-			"id": 1701586,
-			"title": "ChatGPT Process Scheduler",
-			"points_possible": 100.0,
-			"free_form_criterion_comments": false,
-			"hide_score_total": false,
-			"hide_points": false
-		},
-		"published": true,
-		"only_visible_to_overrides": false,
-		"visible_to_everyone": true,
-		"locked_for_user": false,
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608633/submissions?zip=1",
-		"post_manually": false,
-		"anonymize_students": false,
-		"require_lockdown_browser": false,
-		"restrict_quantitative_data": false
-	},
-	{
-		"id": 8608634,
-		"description": "\u003clink rel=\"stylesheet\" href=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cdiv id=\"content\"\u003e\n\u003cp\u003eA concurrent hash table is a data structure that allows multiple threads to perform operations on a shared collection of key-data pairs, without causing data corruption or inconsistency. The concurrent hash table consists of a linked list of nodes, each of which stores some data associated with the key. The hash value is computed by applying a hash function to the key.\u003c/p\u003e\n\u003cp\u003eNote that for this assignment, we will not be taking into consideration hash collisions. We will use \u003ca href=\"https://en.wikipedia.org/wiki/Jenkins_hash_function\"\u003eJenkins's one_at_a_time hash function\u003c/a\u003e which has a very low collision rate for the number of hashes we will be working with. Regardless, your test data and the final data set you will be graded against will be guaranteed collision-free.\u003c/p\u003e\n\u003cp\u003eThe concurrent hash table supports the following functions:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003ccode\u003einsert(key, values)\u003c/code\u003e: This function inserts a new key-data pair into the hash table, or updates the value of an existing key. To insert a key-data pair, the function first computes the hash value of the given name (the key).\u0026nbsp; Then, it acquires the write lock that protects the list and searches the linked list for the hash. If the hash is found, it updates the value. Otherwise, it creates a new node and inserts it in the list. Finally, it releases the write lock and returns.\u003c/li\u003e\n\u003cli\u003e\n\u003ccode\u003edelete(key)\u003c/code\u003e: This function deletes a key-data pair from the hash table, if it exists. To delete a key-data pair, the function first computes the hash value of the key and obtains a writer lock. Then it searches the linked list for the key. If the key is found, it removes the node from the list and frees the memory. Otherwise, it does nothing. Finally, it releases the write lock and returns.\u003c/li\u003e\n\u003cli\u003e\n\u003ccode\u003esearch(key)\u003c/code\u003e: This function searches for a key-data pair in the hash table and returns the value, if it exists. To search for a key-data pair, the function first computes the hash value of the key acquires a reader lock. Then, it searches the linked list for the key. If the key is found, it returns the value. Otherwise, it returns NULL. Finally, it releases the read lock and returns. The caller should then print the record or \"No Record Found\" if the return is NULL.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"the-hash-table-structure\"\u003eThe Hash Table Structure\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"c language-c\"\u003etypedef struct hash_struct\n{\n  uint32_t hash;\n  char name[50];\n  uint32_t salary;\n  struct hash_struct *next;\n} hashRecord;\u003c/code\u003e\u003c/pre\u003e\n\u003ctable style=\"border-collapse: collapse;\" border=\"1\"\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth id=\"field\"\u003eField\u003c/th\u003e\n\u003cth id=\"description\"\u003eDescription\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ehash\u003c/td\u003e\n\u003ctd\u003e32-bit unsigned integer for the hash value produced by running the name text through the \u003ca href=\"https://en.wikipedia.org/wiki/Jenkins_hash_function\"\u003eJenkins one-at-a-time function\u003c/a\u003e\n\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ename\u003c/td\u003e\n\u003ctd\u003eArbitrary string up to 50 characters long\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003esalary\u003c/td\u003e\n\u003ctd\u003e32-bit unsigned integer (who wants a negative salary, eh?) to represent an annual salary.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003enext\u003c/td\u003e\n\u003ctd\u003epointer to the next node in the list\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch2 id=\"reader-writer-lock-reference\"\u003eReader-Writer Lock Reference\u003c/h2\u003e\n\u003cp\u003eThe OSTEP authors have provided sample implementations that you should reference:\u003c/p\u003e\n\u003cp\u003e\u003ca href=\"https://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-sema\"\u003ehttps://github.com/remzi-arpacidusseau/ostep-code/tree/master/threads-sema\u003c/a\u003e\u003c/p\u003e\n\u003ch2 id=\"the-command-file\"\u003eThe Command File\u003c/h2\u003e\n\u003cp\u003eYour program must read a text file called \u003ccode\u003ecommands.txt\u003c/code\u003e containing some configuration information, commands, and data values. Do not read it from the console. You should hard code \u003ccode\u003e\"commands.txt\"\u003c/code\u003e into your program.\u003c/p\u003e\n\u003ch3 id=\"list-of-commands-and-their-parameters\"\u003eList of Commands and their parameters\u003c/h3\u003e\n\u003ctable style=\"border-collapse: collapse;\" border=\"1\"\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth id=\"command\"\u003eCommand\u003c/th\u003e\n\u003cth id=\"parameters\"\u003eParameters\u003c/th\u003e\n\u003cth id=\"description\"\u003eDescription\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ethreads\u003c/td\u003e\n\u003ctd\u003e\u0026lt;number of threads\u0026gt;,0\u003c/td\u003e\n\u003ctd\u003eThe number of commands to be processed in the file. This allows you to setup a dynamic array of \u003ccode\u003epthread_t\u003c/code\u003e structs. This is always the first line of the command file.\u0026nbsp; Each command after this runs in a separate thread, so if you have 12 commands, this line should read \u003cem\u003ethreads 12,0\u003c/em\u003e\n\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003einsert\u003c/td\u003e\n\u003ctd\u003e\u0026lt;name\u0026gt;,\u0026lt;salary\u0026gt;\u003c/td\u003e\n\u003ctd\u003einserts or updates the data for the given name and salary value.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edelete\u003c/td\u003e\n\u003ctd\u003e\u0026lt;name\u0026gt;,0\u003c/td\u003e\n\u003ctd\u003eName whose record is to be deleted from the list.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003esearch\u003c/td\u003e\n\u003ctd\u003e\u0026lt;name\u0026gt;,0\u003c/td\u003e\n\u003ctd\u003eName whose record is to be retrieved and printed to the output file.\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eprint\u003c/td\u003e\n\u003ctd\u003e0,0\u003c/td\u003e\n\u003ctd\u003ePrint the entire contents of the list to the output file.\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eOrdering\u003c/h3\u003e\n\u003cp\u003eWe assume DELETE operations are legitimate (user has knowledge of the contents of the database).\u0026nbsp; However, they should not be executed before all INSERT operations (including INSERTs which perform updates) are completed.\u003c/p\u003e\n\u003ch3 id=\"sample-file\"\u003eSample File\u003c/h3\u003e\n\u003cpre\u003ethreads,10,0\u003cbr\u003einsert,Richard Garriot,40000\u003cbr\u003einsert,Sid Meier,50000\u003cbr\u003einsert,Shigeru Miyamoto,51000\u003cbr\u003edelete,Sid Meier,0\u003cbr\u003einsert,Hideo Kojima,45000\u003cbr\u003einsert,Gabe Newell,49000\u003cbr\u003einsert,Roberta Williams,45900\u003cbr\u003edelete,Richard Garriot,0\u003cbr\u003einsert,Carol Shaw,41000\u003cbr\u003esearch,Sid Meier,0\u003c/pre\u003e\n\u003ch2 id=\"expected-output\"\u003eExpected Output\u003c/h2\u003e\n\u003cp\u003eOutput should be written to a file called \u003ccode\u003eoutput.txt\u003c/code\u003e in the same directory as the main \u003ccode\u003echash\u003c/code\u003e program and the \u003ccode\u003ecommands.txt\u003c/code\u003e file.\u003c/p\u003e\n\u003ch3 id=\"commands\"\u003eCommands\u003c/h3\u003e\n\u003cp\u003eWrite out each command as they're executed, along with their parameters in this format:\u003cbr\u003e\u0026lt;timestamp\u0026gt;,INSERT,Name,Salary\u003c/p\u003e\n\u003ch4 id=\"examples\"\u003eExamples:\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003e1720453920,INSERT,John Doe,45000\u003c/code\u003e\u003cbr\u003e\u003ccode\u003e1720453925,DELETE,John Doe\u003c/code\u003e\u003cbr\u003e\u003ccode\u003e1720453930,SEARCH,John Doe\u003c/code\u003e\u003c/p\u003e\n\u003ch3 id=\"locks\"\u003eLocks\u003c/h3\u003e\n\u003cp\u003eWrite out when locks are acquired and released along with the lock type, including timestamp:\u003c/p\u003e\n\u003ch4 id=\"examples-1\"\u003eExamples:\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003e1720453940,READ LOCK ACQUIRED\u003c/code\u003e\u003cbr\u003e\u003ccode\u003e1720453960,READ LOCK RELEASED\u003c/code\u003e\u003cbr\u003e\u003ccode\u003e1720453980,WRITE LOCK ACQUIRED\u003c/code\u003e\u003cbr\u003e\u003ccode\u003e1720455520,WRITE LOCK RELEASED\u003c/code\u003e\u003c/p\u003e\n\u003ch3\u003eCondition Variables\u003c/h3\u003e\n\u003cp\u003eWrite out when an operation is waiting on a CV and when it's signaling\u003c/p\u003e\n\u003c/div\u003e\n\u003cpre\u003e1721439714611162: WAITING ON INSERTS\u003cbr\u003e1721439714611918: DELETE AWAKENED\u003cbr\u003e\u003cbr\u003e\u003c/pre\u003e\n\u003ch2 id=\"data-output\"\u003eData Output\u003c/h2\u003e\n\u003cp\u003eUse the single record print for each record:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"txt language-txt\"\u003e448054155,Gabe Newell,49000\u003cbr\u003e660427450,Carol Shaw,41000\u003cbr\u003e909366975,Roberta Williams,45900\u003cbr\u003e1874280167,Shigeru Miyamoto,51000\u003cbr\u003e2569965317,Hideo Kojima,45000\u003cbr\u003e\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cem\u003eThe list should be sorted by the hash value.\u003c/em\u003e\u003c/p\u003e\n\u003ch3 id=\"final-print\"\u003eFinal Print\u003c/h3\u003e\n\u003cp\u003eAfter the final command, print a blank line and the following summary information:\u003cbr\u003eNumber of lock acquisition and release operations and the contents of the table after all operations are completed:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"txt language-txt\"\u003eNumber of lock acquisitions: \u0026nbsp;11\u003cbr\u003eNumber of lock releases: \u0026nbsp;11\u003cbr\u003e448054155,Gabe Newell,49000\u003cbr\u003e660427450,Carol Shaw,41000\u003cbr\u003e909366975,Roberta Williams,45900\u003cbr\u003e1874280167,Shigeru Miyamoto,51000\u003cbr\u003e2569965317,Hideo Kojima,45000\u003cbr\u003e\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eSample output.txt\u003c/h2\u003e\n\u003cp\u003eYou can download a sample output.txt here: \u0026nbsp;\u003ca id=\"108025251\" class=\"instructure_file_link instructure_scribd_file inline_disabled\" href=\"https://webcourses.ucf.edu/courses/1464092/files/108530909?verifier=Spep73wEI7MB5Cm0yBPG6R4FrkhThxtRd3K3t9RA\u0026amp;wrap=1\" target=\"_blank\" data-canvas-previewable=\"true\" data-api-endpoint=\"https://webcourses.ucf.edu/api/v1/courses/1464092/files/108530909\" data-api-returntype=\"File\"\u003eoutput.txt\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eNOTE:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eOnly the final list print should look just like mine.\u0026nbsp; The exact ordering of thread execution will be random, as we've discussed in class.\u003c/li\u003e\n\u003cli\u003eI'm using the same print function at the end, so there will be an \"extra\" set of lock operations.\u003c/li\u003e\n\u003cli\u003eThe delete function may incur one or two sets of lock operations, depending on your implementation:\n\u003cul\u003e\n\u003cli\u003eIf you use the search function you already wrote to find the record to delete, you will have two sets of lock operations -- the outer lock for the delete and the inner one for the search.\u003c/li\u003e\n\u003cli\u003eOtherwise, you'll just have one set of operations.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"final-deliverables\"\u003eFinal Deliverables:\u003c/h2\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth id=\"filename\"\u003eFilename\u003c/th\u003e\n\u003cth id=\"purpose\"\u003ePurpose\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003echash.c\u003c/td\u003e\n\u003ctd\u003eYour main program that reads the commands.txt and produces output to the console\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eMakefile\u003c/td\u003e\n\u003ctd\u003eYour Makefile that builds this project into the final executable.\u0026nbsp; Make your code modular, use multiple source files!\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eOther Source Files\u003c/td\u003e\n\u003ctd\u003eAny additional source files that you used in your program.\u0026nbsp; Please don't write a monolithic chash.c!\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eREADME.txt\u003c/td\u003e\n\u003ctd\u003eUse for anything I or my graders need to know and the AI use citation (see below)\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003eAll of these should be uploaded \u003cem\u003eas a single zip file\u003c/em\u003e containing all of the files.\u003c/h3\u003e\n\u003ch3\u003eWe should be able to:\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eUnzip your file.\u003c/li\u003e\n\u003cli\u003eRun \u003ccode\u003emake\u003c/code\u003e to compile it into the main executable \u003ccode\u003echash\u003c/code\u003e\n\u003c/li\u003e\n\u003cli\u003eYour program will read \u003ccode\u003ecommands.txt\u003c/code\u003e and then produce \u003ccode\u003eoutput.txt\u003c/code\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"ai-policy\"\u003eAI Policy\u003c/h2\u003e\n\u003cp\u003eWhen using AI assistants, please adhere to the following policies and suggestions:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cstrong\u003ePut Effort into Crafting High-Quality Prompts:\u003c/strong\u003e Tools like ChatGPT and CoPilot, while useful, have serious limitations, and hence are often incorrect. If you provide minimum effort prompts, you will get low quality results. You will need to refine your prompts in order to get good outcomes. This will take concerted effort.\u003c/li\u003e\n\u003cli\u003e\n\u003cstrong\u003eBe Aware of AI Limitations:\u003c/strong\u003e Even if you have crafted well-constructed prompts, do not blindly trust anything an AI assistant tool says or outputs. If it gives a snippet of code, number, or fact, assume that it is wrong unless you either know it to be correct or check it with another source. You are responsible for any errors or omissions provided by the tool, and these tools tend to work best for topics you fully understand.\u003c/li\u003e\n\u003cli\u003e\n\u003cstrong\u003eGive the AI Tool Proper Attribution:\u003c/strong\u003e AI is a tool, and one that you must acknowledge using. Thus, you must provide these tools proper attribution if you use them for assignments. As such, you are required to provide a paragraph or two either in a comment or in the README file explaining what you used the AI for, and what prompts you used to get the results. Failure to do this will result in a violation of UCF Academic Integrity policies.\u003c/li\u003e\n\u003cli\u003e\n\u003cstrong\u003eKnow When to Use and Not Use AI Tools\u003c/strong\u003e Be thoughtful about when AI tools are useful and when they are not. Don't use the tool if it isn't appropriate, or if you do not have full grasp of a given concept from class.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003ecredit to Dr. Kevin Moran for this succinct summary of AI use policy!\u003c/code\u003e\u003c/p\u003e\n\u003ch2 id=\"grading-rubric\"\u003eGrading Rubric\u003c/h2\u003e\n\u003cp\u003e100 points total\u003c/p\u003e\n\u003ctable style=\"border-collapse: collapse;\" border=\"1\"\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth id=\"requirement\"\u003eRequirement\u003c/th\u003e\n\u003cth id=\"description\"\u003eDescription\u003c/th\u003e\n\u003cth id=\"points\"\u003ePoints\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eCompiles\u003c/td\u003e\n\u003ctd\u003eCode compiles successfully. Failure to compile results in a zero grade for the assignment.\u003c/td\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eRuns to Completion\u003c/td\u003e\n\u003ctd\u003eProgram reads in the command file and produces output. Failure to produce any output or immediate error results in zero grade for the assignment.\u003c/td\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCorrectly Inserts into the Hash Table\u003c/td\u003e\n\u003ctd\u003e- Hash correctly computed (3 pts)\u003cbr\u003e- Data correctly inserted into Hash Table (2 pts)\u003c/td\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCorrectly Deletes Records from the Hash Table\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e10\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCorrectly Searches for Names in the Hash Table and prints the record\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCorrectly Prints the Entire Hash Table on a\u0026nbsp;\u003cem\u003eprint\u003c/em\u003e command\u003c/td\u003e\n\u003ctd\u003e- Prints the table: 2 points\u003cbr\u003e- Prints the table in sorted order: 3 points\u003c/td\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLock Messages are Printed\u003c/td\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e5\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eLock and Unlock Occur as Expected\u003c/td\u003e\n\u003ctd\u003e- While writing, no other thread may read or write. (10 pts)\u003cbr\u003e- While reading, no other thread may write, other reads are allowed (10 pts).\u003cbr\u003e- No writes are allowed until all readers are complete (10 pts)\u003c/td\u003e\n\u003ctd\u003e30\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\n\u003cp\u003eFinal Output Matches the Test Final Output\u003c/p\u003e\n\u003cp\u003e(That is, the final table that is printed at the end.)\u003c/p\u003e\n\u003c/td\u003e\n\u003ctd\u003e\n\u003cp\u003e- Number of locks acquired and released matched (15 pts)\u003cbr\u003e\u003cem\u003enote that these can vary depending on implementation (e.g. delete calling search invoking 2 sets of lock operations)\u003c/em\u003e\u003cbr\u003e- Correct entries in the table (10 pts):\u003cbr\u003e- In the correct order (i.e. they're correctly sorted) (5 pts)\u003c/p\u003e\n\u003c/td\u003e\n\u003ctd\u003e30\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u0026nbsp;\u003c/p\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
-		"due_at": "2024-11-13T04:59:00Z",
-		"unlock_at": null,
-		"lock_at": null,
-		"points_possible": 100.0,
-		"grading_type": "points",
-		"assignment_group_id": 2252308,
-		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:23:28Z",
-		"updated_at": "2024-08-09T20:23:28Z",
-		"peer_reviews": false,
-		"automatic_peer_reviews": false,
-		"position": 6,
-		"grade_group_students_individually": false,
-		"anonymous_peer_reviews": false,
-		"group_category_id": 131748,
-		"post_to_sis": false,
-		"moderated_grading": false,
-		"omit_from_final_grade": false,
-		"intra_group_peer_reviews": false,
-		"anonymous_instructor_annotations": false,
-		"anonymous_grading": false,
-		"graders_anonymous_to_graders": false,
-		"grader_count": 0,
-		"grader_comments_visible_to_graders": true,
-		"final_grader_id": null,
-		"grader_names_visible_to_final_grader": true,
-		"allowed_attempts": -1,
-		"annotatable_attachment_id": null,
-		"hide_in_gradebook": false,
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjM5MzE1ODZmLTYzNTUtNDMwZi1iN2NjLWM5OWUxZTMxNzkyMyIsImx0aV9hc3NpZ25tZW50X2Rlc2NyaXB0aW9uIjoiXHUwMDNjZGl2IGlkPVwiY29udGVudFwiXHUwMDNlXG5cdTAwM2NwXHUwMDNlQSBjb25jdXJyZW50IGhhc2ggdGFibGUgaXMgYSBkYXRhIHN0cnVjdHVyZSB0aGF0IGFsbG93cyBtdWx0aXBsZSB0aHJlYWRzIHRvIHBlcmZvcm0gb3BlcmF0aW9ucyBvbiBhIHNoYXJlZCBjb2xsZWN0aW9uIG9mIGtleS1kYXRhIHBhaXJzLCB3aXRob3V0IGNhdXNpbmcgZGF0YSBjb3JydXB0aW9uIG9yIGluY29uc2lzdGVuY3kuIFRoZSBjb25jdXJyZW50IGhhc2ggdGFibGUgY29uc2lzdHMgb2YgYSBsaW5rZWQgbGlzdCBvZiBub2RlcywgZWFjaCBvZiB3aGljaCBzdG9yZXMgc29tZSBkYXRhIGFzc29jaWF0ZWQgd2l0aCB0aGUga2V5LiBUaGUgaGFzaCB2YWx1ZSBpcyBjb21wdXRlZCBieSBhcHBseWluZyBhIGhhc2ggZnVuY3Rpb24gdG8gdGhlIGtleS5cdTAwM2MvcFx1MDAzZVxuXHUwMDNjcFx1MDAzZU5vdGUgdGhhdCBmb3IgdGhpcyBhc3NpZ25tZW50LCB3ZSB3aWxsIG5vdCBiZSB0YWtpbmcgaW50byBjb25zaWRlcmF0aW9uIGhhc2ggY29sbGlzaW9ucy4gV2Ugd2lsbCB1c2UgXHUwMDNjYSBocmVmPVwiaHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvSmVua2luc19oYXNoX2Z1bmN0aW9uXCJcdTAwM2VKZW5raW5zJ3Mgb25lX2F0X2FfdGltZSBoYXNoIGZ1bmN0aW9uXHUwMDNjL2FcdTAwM2Ugd2hpY2ggaGFzIGEgdmVyeSBsb3cgY29sbGlzaW9uIHJhdGUgZm9yIHRoZSBudW1iZXIgb2YgaGFzaGVzIHdlIHdpbGwgYmUgd29ya2luZyB3aXRoLiBSZWdhcmRsZXNzLCB5b3VyIHRlc3QgZGF0YSBhbmQgdGhlIGZpbmFsIGRhdGEgc2V0IHlvdSB3aWxsIGJlIGdyYWRlZCBhZ2FpbnN0IHdpbGwgYmUgZ3VhcmFudGVlZCBjb2xsaXNpb24tZnJlZS5cdTAwM2MvcFx1MDAzZVxuXHUwMDNjcFx1MDAzZVRoZSBjb25jdXJyZW50IGhhc2ggdGFibGUgc3VwcG9ydHMgdGhlIGZvbGxvd2luZyBmdW5jdGlvbnM6XHUwMDNjL3BcdTAwM2Vcblx1MDAzY3VsXHUwMDNlXG5cdTAwM2NsaVx1MDAzZVxuXHUwMDNjY29kZVx1MDAzZWluc2VydChrZXksIHZhbHVlcylcdTAwM2MvY29kZVx1MDAzZTogVGhpcyBmdW5jdGlvbiBpbnNlcnRzIGEgbmV3IGtleS1kYXRhIHBhaXIgaW50byB0aGUgaGFzaCB0YWJsZSwgb3IgLi4uICh0cnVuY2F0ZWQpIn0.CT9MRLSzpIttL5l_ebiGU9K98GTBI1Abr58ZgdZ1ROY",
-		"lti_context_id": "3931586f-6355-430f-b7cc-c99e1e317923",
-		"course_id": 1464092,
-		"name": "PA#2 - Concurrent Hash Table (groups enabled)",
-		"submission_types": [
-			"online_upload"
-		],
-		"has_submitted_submissions": false,
-		"due_date_required": false,
-		"max_name_length": 255,
-		"in_closed_grading_period": false,
-		"graded_submissions_exist": false,
-		"is_quiz_assignment": false,
-		"can_duplicate": true,
-		"original_course_id": null,
-		"original_assignment_id": null,
-		"original_lti_resource_link_id": null,
-		"original_assignment_name": null,
-		"original_quiz_id": null,
-		"workflow_state": "published",
-		"important_dates": false,
-		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608634",
-		"allowed_extensions": [
-			"zip"
-		],
-		"use_rubric_for_grading": true,
-		"free_form_criterion_comments": false,
-		"rubric": [
-			{
-				"id": "_9728",
-				"points": 5.0,
-				"description": "Compiles",
-				"long_description": "Code compiles successfully. Failure to compile results in a zero grade for the assignment.",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "blank",
-						"points": 5.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "blank_2",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_6684",
-				"points": 5.0,
-				"description": "Runs to Completion",
-				"long_description": "Program reads in the command file and produces output. Failure to produce any output or immediate error results in zero grade for the assignment.",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_3324",
-						"points": 5.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_4939",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_4121",
-				"points": 5.0,
-				"description": "Correctly Inserts into the Hash Table",
-				"long_description": "- Hash correctly computed (3 pts)  \u003cbr/\u003e\n- Data correctly inserted into Hash Table (2 pts)",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_2549",
-						"points": 5.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_7649",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_4326",
-				"points": 10.0,
-				"description": "Correctly Deletes Records from the Hash Table",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_1452",
-						"points": 10.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_3111",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_918",
-				"points": 5.0,
-				"description": "Correctly Prints the Entire Hash Table on a print command",
-				"long_description": "- Prints the table: 2 points  \u003cbr/\u003e\n- Prints the table in sorted order: 3 points",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_9233",
-						"points": 5.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_9617",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_484",
-				"points": 5.0,
-				"description": "Lock Messages are Printed",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_398",
-						"points": 5.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_9219",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_9660",
-				"points": 30.0,
-				"description": "Lock and Unlock Occur as Expected",
-				"long_description": "- While writing, no other thread may read or write. (10 pts)  \u003cbr/\u003e\n- While reading, no other thread may write, other reads are allowed (10 pts).  \u003cbr/\u003e\n- No writes are allowed until all readers are complete (10 pts)",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_2299",
-						"points": 30.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_9476",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_7893",
-				"points": 30.0,
-				"description": "Final Output Matches the Test Final Output\n\n(That is, the final table that is printed at the end.)",
-				"long_description": "- Number of locks acquired and released matched (15 pts)  \u003cbr/\u003e\n_note that these can vary depending on implementation (e.g. delete calling search invoking 2 sets of lock operations)_  \u003cbr/\u003e\n- Correct entries in the table (10 pts):  \u003cbr/\u003e\n- In the correct order (i.e. they\u0026#39;re correctly sorted) (5 pts)",
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_5140",
-						"points": 30.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_9418",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			},
-			{
-				"id": "_3084",
-				"points": 5.0,
-				"description": "Correctly Searches for Names in the Hash Table and prints the record",
-				"long_description": null,
-				"ignore_for_scoring": null,
-				"criterion_use_range": false,
-				"ratings": [
-					{
-						"id": "_3709",
-						"points": 5.0,
-						"description": "Full Marks",
-						"long_description": ""
-					},
-					{
-						"id": "_1858",
-						"points": 0.0,
-						"description": "No Marks",
-						"long_description": ""
-					}
-				]
-			}
-		],
-		"rubric_settings": {
-			"id": 1701585,
-			"title": "Concurrent Hash Rubric (1)",
-			"points_possible": 100.0,
-			"free_form_criterion_comments": false,
-			"hide_score_total": false,
-			"hide_points": false
-		},
-		"published": true,
-		"only_visible_to_overrides": false,
-		"visible_to_everyone": true,
-		"locked_for_user": false,
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608634/submissions?zip=1",
-		"post_manually": false,
-		"anonymize_students": false,
-		"require_lockdown_browser": false,
-		"restrict_quantitative_data": false
-	},
-	{
-		"id": 8608630,
-		"description": "\u003clink rel=\"stylesheet\" href=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cp\u003eThis survey intends to take the general \"temperature\" of the class.\u0026nbsp; Don't be afraid to be honest.\u0026nbsp; Remember, as your instructor, my job is to facilitate your success.\u0026nbsp; The more I know about you, the easier it will be for me to help you.\u003c/p\u003e\n\u003cp\u003e\u0026nbsp;\u003c/p\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
-		"due_at": "2024-08-26T03:59:00Z",
-		"unlock_at": "2024-08-20T14:00:00Z",
-		"lock_at": "2024-11-23T04:59:00Z",
-		"points_possible": 2.0,
-		"grading_type": "points",
-		"assignment_group_id": 2252310,
-		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:23:23Z",
-		"updated_at": "2024-08-20T14:00:02Z",
+		"created_at": "2024-08-18T16:44:40Z",
+		"updated_at": "2024-08-18T16:44:40Z",
 		"peer_reviews": false,
 		"automatic_peer_reviews": false,
 		"position": 1,
@@ -899,20 +31,20 @@
 		"allowed_attempts": -1,
 		"annotatable_attachment_id": null,
 		"hide_in_gradebook": false,
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjFhY2ZjZGJjLWQyZGUtNGFmMy1iNTZmLWJiNDZhNmUzNjQ2ZSIsImx0aV9hc3NpZ25tZW50X2Rlc2NyaXB0aW9uIjoiXHUwMDNjcFx1MDAzZVRoaXMgc3VydmV5IGludGVuZHMgdG8gdGFrZSB0aGUgZ2VuZXJhbCBcInRlbXBlcmF0dXJlXCIgb2YgdGhlIGNsYXNzLlx1MDAyNm5ic3A7IERvbid0IGJlIGFmcmFpZCB0byBiZSBob25lc3QuXHUwMDI2bmJzcDsgUmVtZW1iZXIsIGFzIHlvdXIgaW5zdHJ1Y3RvciwgbXkgam9iIGlzIHRvIGZhY2lsaXRhdGUgeW91ciBzdWNjZXNzLlx1MDAyNm5ic3A7IFRoZSBtb3JlIEkga25vdyBhYm91dCB5b3UsIHRoZSBlYXNpZXIgaXQgd2lsbCBiZSBmb3IgbWUgdG8gaGVscCB5b3UuXHUwMDNjL3BcdTAwM2Vcblx1MDAzY3BcdTAwM2VcdTAwMjZuYnNwO1x1MDAzYy9wXHUwMDNlIn0.dggGzAx0i6suQP6ZFR3BUX5ECha7SggiZhjgG_h5D0M",
-		"lti_context_id": "1acfcdbc-d2de-4af3-b56f-bb46a6e3646e",
-		"course_id": 1464092,
-		"name": "Course Expectations Survey",
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjNiYWUxNGRjLTE5MjQtNDFhYS1iYmFhLTc2Y2ZmZWY5NGJlNSIsImx0aV9hc3NpZ25tZW50X2Rlc2NyaXB0aW9uIjoiXHUwMDNjcFx1MDAzZVBsZWFzZSBiZWdpbiByZWFkaW5nIENoYXB0ZXIgMSBmcm9tIHlvdXIgYm9vay5cdTAwM2MvcFx1MDAzZSJ9.WuoptAftv1daeiF6d7JF_RbamQrXaczmk0t7lxQItZc",
+		"lti_context_id": "3bae14dc-1924-41aa-bbaa-76cffef94be5",
+		"course_id": 1465493,
+		"name": "#0",
 		"submission_types": [
-			"online_quiz"
+			"online_text_entry"
 		],
 		"has_submitted_submissions": true,
 		"due_date_required": false,
 		"max_name_length": 255,
 		"in_closed_grading_period": false,
-		"graded_submissions_exist": true,
+		"graded_submissions_exist": false,
 		"is_quiz_assignment": false,
-		"can_duplicate": false,
+		"can_duplicate": true,
 		"original_course_id": null,
 		"original_assignment_id": null,
 		"original_lti_resource_link_id": null,
@@ -921,31 +53,381 @@
 		"workflow_state": "published",
 		"important_dates": false,
 		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608630",
-		"quiz_id": 2562722,
-		"anonymous_submissions": false,
+		"html_url": "https://webcourses.ucf.edu/courses/1465493/assignments/8677439",
 		"published": true,
 		"only_visible_to_overrides": false,
 		"visible_to_everyone": true,
 		"locked_for_user": false,
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/quizzes/2562722/submissions?zip=1",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1465493/assignments/8677439/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	}
+]tion": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_2360",
+				"points": 5.0,
+				"description": "Cover",
+				"long_description": "Names of group members, course number, title and section, experiment number and title, as well as due date",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_9186",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_3874",
+						"points": 4.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_6015",
+						"points": 3.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_8160",
+						"points": 2.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_8874",
+						"points": 1.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_6328",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_433",
+				"points": 5.0,
+				"description": "Introduction and Equipment List",
+				"long_description": "Concise descriptions of the experiment objectives in your own words. Plus equipment list.",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_8714",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_5206",
+						"points": 4.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_9030",
+						"points": 3.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_1294",
+						"points": 2.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_4924",
+						"points": 1.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_9007",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_2072",
+				"points": 15.0,
+				"description": "Outcome Methods",
+				"long_description": "Concise descriptions of the experimental procedures using your own words and circuit diagrams",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_8444",
+						"points": 15.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_5607",
+						"points": 12.0,
+						"description": "Minor flaw",
+						"long_description": "Small part of the methodology is missing or is explained incompletely"
+					},
+					{
+						"id": "_3179",
+						"points": 9.0,
+						"description": "Good",
+						"long_description": "Important part of the methodology is missing or is explained wrongly"
+					},
+					{
+						"id": "_1963",
+						"points": 6.0,
+						"description": "Average",
+						"long_description": "If part of the methodology is misunderstood, so the experiment is performed wrongly, this rating and lower is used."
+					},
+					{
+						"id": "_3619",
+						"points": 3.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_7691",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_3648",
+				"points": 25.0,
+				"description": "Outcome Simulation Results",
+				"long_description": "Presentation of simulation results",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_2918",
+						"points": 25.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_1560",
+						"points": 20.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_2684",
+						"points": 15.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_7925",
+						"points": 10.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_2970",
+						"points": 5.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_1445",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_9380",
+				"points": 20.0,
+				"description": "Interpretation of the Results",
+				"long_description": "Concise interpretations of experimental results pertaining to concepts as well as detailed explanations for discrepancies with the simulation results",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_8305",
+						"points": 20.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_9415",
+						"points": 16.0,
+						"description": "Minor flaw",
+						"long_description": "Small part of results have not been interpreted or small discrepancies have not been discussed"
+					},
+					{
+						"id": "_3987",
+						"points": 12.0,
+						"description": "Good",
+						"long_description": "A mistake in interpretation or discussed discrepancies"
+					},
+					{
+						"id": "_8883",
+						"points": 8.0,
+						"description": "Average",
+						"long_description": "Missing interpretation or discrepancies"
+					},
+					{
+						"id": "_7407",
+						"points": 4.0,
+						"description": "Weak",
+						"long_description": "Incomplete interpretation or discussed discrepancies"
+					},
+					{
+						"id": "_4979",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_6322",
+				"points": 10.0,
+				"description": "Conclusion",
+				"long_description": "Concise conclusions",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_8901",
+						"points": 10.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_8405",
+						"points": 8.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_939",
+						"points": 6.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_8909",
+						"points": 4.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_8103",
+						"points": 2.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_1831",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_6",
+				"points": 5.0,
+				"description": "Cleanliness",
+				"long_description": "Organization of contents and clarity of presentation",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_4212",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_8476",
+						"points": 4.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_6302",
+						"points": 3.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_5498",
+						"points": 2.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_2555",
+						"points": 1.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_3539",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1722285,
+			"title": "Some Rubric (1)",
+			"points_possible": 100.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": false,
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1465496/assignments/8703567/submissions?zip=1",
 		"post_manually": false,
 		"anonymize_students": false,
 		"require_lockdown_browser": false,
 		"restrict_quantitative_data": false
 	},
 	{
-		"id": 8608607,
+		"id": 8703572,
 		"description": "",
-		"due_at": "2024-08-26T03:59:00Z",
-		"unlock_at": "2024-08-23T04:00:00Z",
+		"due_at": "2024-09-23T03:59:59Z",
+		"unlock_at": null,
 		"lock_at": null,
-		"points_possible": 10.0,
+		"points_possible": 100.0,
 		"grading_type": "points",
-		"assignment_group_id": 2252310,
+		"assignment_group_id": 2245973,
 		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:22:58Z",
-		"updated_at": "2024-08-23T04:00:05Z",
+		"created_at": "2024-08-26T20:20:11Z",
+		"updated_at": "2024-08-26T20:21:06Z",
 		"peer_reviews": false,
 		"automatic_peer_reviews": false,
 		"position": 2,
@@ -966,20 +448,20 @@
 		"allowed_attempts": -1,
 		"annotatable_attachment_id": null,
 		"hide_in_gradebook": false,
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImRlZjRlNjczLTk1ZDMtNDIyNC1iNTliLTk2MDM0MzhiOTliOCJ9.xVEiUR2mqDPlTcUegV7IBA1Ehs7wWzkqx_wXceyB3IY",
-		"lti_context_id": "def4e673-95d3-4224-b59b-9603438b99b8",
-		"course_id": 1464092,
-		"name": "Quiz 1 - Introduction to Operating Systems",
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjEyYWMwZjA3LWQ4YTItNDE1Ny05NGM0LTY0NWMwZmM4MjdkYyJ9.kQvKutWqcTZzFwQVPdjUSt4opMMuok3xqPtB2TXv1eE",
+		"lti_context_id": "12ac0f07-d8a2-4157-94c4-645c0fc827dc",
+		"course_id": 1465496,
+		"name": "Lab Report 2",
 		"submission_types": [
-			"online_quiz"
+			"online_upload"
 		],
-		"has_submitted_submissions": true,
+		"has_submitted_submissions": false,
 		"due_date_required": false,
 		"max_name_length": 255,
 		"in_closed_grading_period": false,
-		"graded_submissions_exist": true,
-		"is_quiz_assignment": true,
-		"can_duplicate": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
 		"original_course_id": null,
 		"original_assignment_id": null,
 		"original_lti_resource_link_id": null,
@@ -988,30 +470,516 @@
 		"workflow_state": "published",
 		"important_dates": false,
 		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608607",
-		"quiz_id": 2562698,
-		"anonymous_submissions": false,
+		"html_url": "https://webcourses.ucf.edu/courses/1465496/assignments/8703572",
+		"allowed_extensions": [
+			"pdf"
+		],
+		"use_rubric_for_grading": false,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_1770",
+				"points": 15.0,
+				"description": "Lab Preparation",
+				"long_description": "",
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 15.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_5117",
+						"points": 12.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_6405",
+						"points": 9.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_1675",
+						"points": 6.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_3466",
+						"points": 3.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_2360",
+				"points": 5.0,
+				"description": "Cover",
+				"long_description": "Names of group members, course number, title and section, experiment number and title, as well as due date",
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_9186",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_3874",
+						"points": 4.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_6015",
+						"points": 3.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_8160",
+						"points": 2.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_8874",
+						"points": 1.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_6328",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_433",
+				"points": 5.0,
+				"description": "Introduction and Equipment List",
+				"long_description": "Concise descriptions of the experiment objectives in your own words. Plus equipment list.",
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_8714",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_5206",
+						"points": 4.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_9030",
+						"points": 3.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_1294",
+						"points": 2.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_4924",
+						"points": 1.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_9007",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_2072",
+				"points": 15.0,
+				"description": "Outcome Methods",
+				"long_description": "Concise descriptions of the experimental procedures using your own words and circuit diagrams",
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_8444",
+						"points": 15.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_5607",
+						"points": 12.0,
+						"description": "Minor flaw",
+						"long_description": "Small part of the methodology is missing or is explained incompletely"
+					},
+					{
+						"id": "_3179",
+						"points": 9.0,
+						"description": "Good",
+						"long_description": "Important part of the methodology is missing or is explained wrongly"
+					},
+					{
+						"id": "_1963",
+						"points": 6.0,
+						"description": "Average",
+						"long_description": "If part of the methodology is misunderstood, so the experiment is performed wrongly, this rating and lower is used."
+					},
+					{
+						"id": "_3619",
+						"points": 3.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_7691",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_3648",
+				"points": 25.0,
+				"description": "Outcome Simulation Results",
+				"long_description": "Presentation of simulation results",
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_2918",
+						"points": 25.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_1560",
+						"points": 20.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_2684",
+						"points": 15.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_7925",
+						"points": 10.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_2970",
+						"points": 5.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_1445",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_9380",
+				"points": 20.0,
+				"description": "Interpretation of the Results",
+				"long_description": "Concise interpretations of experimental results pertaining to concepts as well as detailed explanations for discrepancies with the simulation results",
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_8305",
+						"points": 20.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_9415",
+						"points": 16.0,
+						"description": "Minor flaw",
+						"long_description": "Small part of results have not been interpreted or small discrepancies have not been discussed"
+					},
+					{
+						"id": "_3987",
+						"points": 12.0,
+						"description": "Good",
+						"long_description": "A mistake in interpretation or discussed discrepancies"
+					},
+					{
+						"id": "_8883",
+						"points": 8.0,
+						"description": "Average",
+						"long_description": "Missing interpretation or discrepancies"
+					},
+					{
+						"id": "_7407",
+						"points": 4.0,
+						"description": "Weak",
+						"long_description": "Incomplete interpretation or discussed discrepancies"
+					},
+					{
+						"id": "_4979",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_6322",
+				"points": 10.0,
+				"description": "Conclusion",
+				"long_description": "Concise conclusions",
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_8901",
+						"points": 10.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_8405",
+						"points": 8.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_939",
+						"points": 6.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_8909",
+						"points": 4.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_8103",
+						"points": 2.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_1831",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "_6",
+				"points": 5.0,
+				"description": "Cleanliness",
+				"long_description": "Organization of contents and clarity of presentation",
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "_4212",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": ""
+					},
+					{
+						"id": "_8476",
+						"points": 4.0,
+						"description": "Minor flaw",
+						"long_description": ""
+					},
+					{
+						"id": "_6302",
+						"points": 3.0,
+						"description": "Good",
+						"long_description": ""
+					},
+					{
+						"id": "_5498",
+						"points": 2.0,
+						"description": "Average",
+						"long_description": ""
+					},
+					{
+						"id": "_2555",
+						"points": 1.0,
+						"description": "Weak",
+						"long_description": ""
+					},
+					{
+						"id": "_3539",
+						"points": 0.0,
+						"description": "No marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1722286,
+			"title": "Some Rubric (1) (1)",
+			"points_possible": 100.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
 		"published": true,
 		"only_visible_to_overrides": false,
 		"visible_to_everyone": true,
 		"locked_for_user": false,
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/quizzes/2562698/submissions?zip=1",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1465496/assignments/8703572/submissions?zip=1",
+		"post_manually": false,
+		"anonymize_students": false,
+		"require_lockdown_browser": false,
+		"restrict_quantitative_data": false
+	}
+]style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003eexplain\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 148px;\" scope=\"col\"\u003e\n\u003cp\u003edescribe\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003ereport\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003etranslate\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003eexpress\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003esummarize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003eidentify\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003eclassify\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003ediscuss\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003erestate\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003elocate\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003ecompare\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003ediscuss\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003ereview\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003eillustrate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003etell\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003ecritique\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003eestimate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd style=\"width: 150px;\"\u003ereference\u003c/td\u003e\n\u003ctd style=\"width: 148px;\"\u003einterpret\u003c/td\u003e\n\u003ctd style=\"width: 150px;\"\u003ereiterate\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eApplication Level\u003c/u\u003e: Use or apply the learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003eapply\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003esketch\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003eperform\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003euse\u003c/td\u003e\n\u003ctd\u003esolve\u003c/td\u003e\n\u003ctd\u003erespond\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003epractice\u003c/td\u003e\n\u003ctd\u003econstruct\u003c/td\u003e\n\u003ctd\u003erole-play\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edemonstrate\u003c/td\u003e\n\u003ctd\u003econduct\u003c/td\u003e\n\u003ctd\u003eexecute\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecomplete\u003c/td\u003e\n\u003ctd\u003edramatize\u003c/td\u003e\n\u003ctd\u003eemploy\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eAnalysis Level\u003c/u\u003e: Examine the learned information critically.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003eanalyze\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003einspect\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003etest\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edistinguish\u003c/td\u003e\n\u003ctd\u003ecategorize\u003c/td\u003e\n\u003ctd\u003ecritique\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edifferentiate\u003c/td\u003e\n\u003ctd\u003ecatalogue\u003c/td\u003e\n\u003ctd\u003ediagnose\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eappraise\u003c/td\u003e\n\u003ctd\u003equantify\u003c/td\u003e\n\u003ctd\u003eextrapolate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecalculate\u003c/td\u003e\n\u003ctd\u003emeasure\u003c/td\u003e\n\u003ctd\u003etheorize\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eexperiment\u003c/td\u003e\n\u003ctd\u003erelate\u003c/td\u003e\n\u003ctd\u003edebate\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eSynthesis Level\u003c/u\u003e: Create new models using the learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003edevelop\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003erevise\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003ecompose\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eplan\u003c/td\u003e\n\u003ctd\u003eformulate\u003c/td\u003e\n\u003ctd\u003ecollect\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ebuild\u003c/td\u003e\n\u003ctd\u003epropose\u003c/td\u003e\n\u003ctd\u003econstruct\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecreate\u003c/td\u003e\n\u003ctd\u003eestablish\u003c/td\u003e\n\u003ctd\u003eprepare\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edesign\u003c/td\u003e\n\u003ctd\u003eintegrate\u003c/td\u003e\n\u003ctd\u003edevise\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eorganize\u003c/td\u003e\n\u003ctd\u003emodify\u003c/td\u003e\n\u003ctd\u003emanage\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003cu\u003eEvaluation Level\u003c/u\u003e: Assess or judge the value of learned information.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003ctable style=\"width: 450px;\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"\u003e\n\u003ctbody\u003e\n\u003ctr style=\"width: 45px;\"\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\" align=\"left\" valign=\"middle\"\u003e\n\u003cp\u003ereview\u003c/p\u003e\n\u003c/th\u003e\n\u003cth scope=\"col\"\u003e\n\u003cp\u003eappraise\u003c/p\u003e\n\u003c/th\u003e\n\u003cth style=\"width: 150px;\" scope=\"col\"\u003e\n\u003cp\u003echoose\u003c/p\u003e\n\u003c/th\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ejustify\u003c/td\u003e\n\u003ctd\u003eargue\u003c/td\u003e\n\u003ctd\u003econclude\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eassess\u003c/td\u003e\n\u003ctd\u003erate\u003c/td\u003e\n\u003ctd\u003ecompare\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003edefend\u003c/td\u003e\n\u003ctd\u003escore\u003c/td\u003e\n\u003ctd\u003eevaluate\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ereport on\u003c/td\u003e\n\u003ctd\u003eselect\u003c/td\u003e\n\u003ctd\u003einterpret\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003einvestigate\u003c/td\u003e\n\u003ctd\u003emeasure\u003c/td\u003e\n\u003ctd\u003esupport\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/blockquote\u003e\n\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
+		"due_at": "2024-08-31T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-09-01T03:59:00Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:27Z",
+		"updated_at": "2024-07-11T16:21:53Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 2,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": 2,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjMzYWNmN2UyLWJiYzgtNGEwMi05ZmUxLThkN2Y5ZDg3ODFmZiIsImx0aV9hc3NpZ25tZW50X2Rlc2NyaXB0aW9uIjoiXHUwMDNjZGl2IGNsYXNzPVwiZGVzY3JpcHRpb24gdXNlcl9jb250ZW50IHRlYWNoZXItdmVyc2lvbiBlbmhhbmNlZFwiXHUwMDNlXG5cdTAwM2NwXHUwMDNlWW91IHdpbGwgc3VibWl0IGEgc2luZ2xlIHdvcmQgZG9jdW1lbnQgY29udGFpbmluZyB0aGUgZ3VpZGVkIG5vdGVzIGZvciBhbGwgb2YgdGhlIGxlY3R1cmUgdmlkZW8gaW4gdGhpcyBtb2R1bGUuIERvIG5vdCB1cGxvYWQgdGhlbSBzZXBhcmF0ZWx5IHlvdSBtdXN0IGNvbWJpbmUgdGhlbS5cdTAwM2MvcFx1MDAzZVxuXHUwMDNjcFx1MDAzZVdoZW4gd3JpdGluZyB0aGUgb2JqZWN0aXZlcyBmb3IgdGhlIGd1aWRlZCBub3RlcyBJIHdhbnQgeW91IHRvIHdyaXRlIHRoZW0gYXMgc2hvcnQgc3RhdGVtZW50cyB1c2luZyBhY3Rpb24gdmVyYnMuIEkgd2lsbCBiZSBsb29raW5nIGZvciBtb3JlIGRlcHRoIHRvIHRoZSBvYmplY3RpdmVzLlx1MDAzYy9wXHUwMDNlXG5cdTAwM2NwXHUwMDNlRXhhbXBsZTogXCJcdTAwM2NzdHJvbmdcdTAwM2VVbmRlcnN0YW5kXHUwMDNjL3N0cm9uZ1x1MDAzZSBob3cgdGhlIHNjaWVudGlmaWMgbWV0aG9kIGlzIGFuIGFwcHJvYWNoIHRvIHBlcmZvcm1pbmcgc2NpZW5jZVwiXHUwMDNjL3BcdTAwM2Vcblx1MDAzY3BcdTAwM2VBY3Rpb24gdmVyYnM6XHUwMDNjL3BcdTAwM2Vcblx1MDAzY3BcdTAwM2VcdTAwM2N1XHUwMDNlS25vd2xlZGdlIExldmVsXHUwMDNjL3VcdTAwM2U6IFJlY29nbml6ZSBvciByZWNhbGwgbGVhcm5lZCBpbmZvcm1hdGlvbi5cdTAwM2MvcFx1MDAzZVxuXHUwMDNjYmxvY2txdW90ZVx1MDAzZVxuXHUwMDNjdGFibGUgc3R5bGU9XCJ3aWR0aDogNDUwcHg7IGhlaWdodDogMTkzcHg7XCIgYm9yZGVyPVwiMVwiIGNlbGxzcGFjaW5nPVwiMFwiIGNlbGxwYWRkaW5nPVwiMFwiXHUwMDNlXG5cdTAwM2N0Ym9keVx1MDAzZVxuXHUwMDNjdHIgc3R5bGU9XCJ3aWR0aDogNDVweDtcIlx1MDAzZVxuXHUwMDNjdGggc3R5bGU9XCJ3aWR0aDogMTUwcHg7IGhlaWdodDogNDNweDtcIiBzY29wZT1cImNvbFwiIGFsaWduPVwibGVmdFwiIHZhbGlnbj1cIm1pZGRsZVwiXHUwMDNlXG5cdTAwM2NwXHUwMDNlXHUwMDNjc3BhbiBzdHlsZT1cImZvbnQtc3R5bGU6IG5vcm1hbDtcIlx1MDAzZWxpc3QgXHUwMDNjL3NwYW5cdTAwM2VcdTAwM2MvcFx1MDAzZVxuXHUwMDNjL3RoXHUwMDNlXG5cdTAwM2N0aCBzdHlsZT1cImhlaWdodDogNDNweDsgd2lkdGg6IDE0OHB4O1wiIHNjb3BlPVwiY29sXCJcdTAwM2Vcblx1MDAzY3BcdTAwM2VcdTAwM2NzcGFuIHN0eWxlPVwiZm9udC1zdHlsZTogbm9ybWFsO1wiXHUwMDNlcmVjb3JkXHUwMDNjLi4uICh0cnVuY2F0ZWQpIn0.iq_CUcHqrqaYrcugcQdHGwlhqKt_7GmeTOoCMu_8UA4",
+		"lti_context_id": "33acf7e2-bbc8-4a02-9fe1-8d7f9d8781ff",
+		"course_id": 1461901,
+		"name": "Guided Notes: Introduction to Geology part 2",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": true,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554265",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 10.0,
+				"description": "Intro to Geology: Minerals, rocks, and Earths layers.",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 10.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "_712",
+						"points": 8.0,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "_1800",
+						"points": 6.0,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677559,
+			"title": "Guided notes (3)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
+		"published": true,
+		"only_visible_to_overrides": false,
+		"visible_to_everyone": true,
+		"locked_for_user": false,
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554265/submissions?zip=1",
 		"post_manually": false,
 		"anonymize_students": false,
 		"require_lockdown_browser": false,
 		"restrict_quantitative_data": false
 	},
 	{
-		"id": 8608620,
-		"due_at": "2024-09-02T03:59:00Z",
-		"unlock_at": "2024-08-30T04:00:00Z",
-		"lock_at": null,
-		"points_possible": 15.0,
+		"id": 8554267,
+		"due_at": "2024-09-07T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-09-08T03:59:00Z",
+		"points_possible": 10.0,
 		"grading_type": "points",
-		"assignment_group_id": 2252310,
+		"assignment_group_id": 2239006,
 		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:23:13Z",
-		"updated_at": "2024-08-09T20:23:14Z",
+		"created_at": "2024-07-11T16:21:28Z",
+		"updated_at": "2024-07-11T16:21:53Z",
 		"peer_reviews": false,
 		"automatic_peer_reviews": false,
 		"position": 3,
@@ -1029,27 +997,34 @@
 		"grader_comments_visible_to_graders": true,
 		"final_grader_id": null,
 		"grader_names_visible_to_final_grader": true,
-		"allowed_attempts": -1,
+		"allowed_attempts": 2,
 		"annotatable_attachment_id": null,
 		"hide_in_gradebook": false,
 		"lock_info": {
-			"unlock_at": "2024-08-30T04:00:00Z",
-			"asset_string": "assignment_8608620"
+			"asset_string": "assignment_8554267",
+			"context_module": {
+				"id": 2696666,
+				"name": "Rocks and minerals",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-08-31T03:59:00Z"
+			}
 		},
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImJjZWFlZGYzLTNhNWYtNDgzMi04MzJkLWVmNjVmZjExZDc3MyJ9.Ak3MEXEkRQjIl8Qmv7PO0ao5sIZTEioCPFMUZixkJmE",
-		"lti_context_id": "bceaedf3-3a5f-4832-832d-ef65ff11d773",
-		"course_id": 1464092,
-		"name": "Quiz 2 - Process Schedulers",
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjhmYzFjYTEwLWUyZjYtNGI2Yi05NzQzLTYyM2ZjZDRkYWE0ZCJ9.gkMBNMMrBoNZUW2LXQLsi8fbzfz_RlrcYQUDf65IXVc",
+		"lti_context_id": "8fc1ca10-e2f6-4b6b-9743-623fcd4daa4d",
+		"course_id": 1461901,
+		"name": "Guided Notes: Rocks and Minerals",
 		"submission_types": [
-			"online_quiz"
+			"online_upload"
 		],
 		"has_submitted_submissions": false,
 		"due_date_required": false,
 		"max_name_length": 255,
 		"in_closed_grading_period": false,
 		"graded_submissions_exist": false,
-		"is_quiz_assignment": true,
-		"can_duplicate": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
 		"original_course_id": null,
 		"original_assignment_id": null,
 		"original_lti_resource_link_id": null,
@@ -1059,31 +1034,147 @@
 		"important_dates": false,
 		"description": null,
 		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608620",
-		"quiz_id": 2562712,
-		"anonymous_submissions": false,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554267",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "1575016_9406",
+				"points": 3.34,
+				"description": "Periodic table and mineral groups",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 3.34,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_1998",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615823_1386",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_7537",
+				"points": 3.33,
+				"description": "Silicon minerals and mineral properties",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_3614",
+						"points": 3.33,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_5960",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615823_4214",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_9020",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_3086",
+				"points": 3.33,
+				"description": "Geology: The rock cycle",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_194",
+						"points": 3.33,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_3525",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1575016_1835",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_3203",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677545,
+			"title": "Guided notes - Rocks and Minerals",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
 		"published": true,
 		"only_visible_to_overrides": false,
 		"visible_to_everyone": true,
 		"locked_for_user": true,
-		"lock_explanation": "This assignment is locked until Aug 30 at 12am.",
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/quizzes/2562712/submissions?zip=1",
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eRocks and minerals\u003c/b\u003e, which is locked until Aug 30 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696666'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696666/prerequisites/assignment_8554267' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554267/submissions?zip=1",
 		"post_manually": false,
 		"anonymize_students": false,
 		"require_lockdown_browser": false,
 		"restrict_quantitative_data": false
 	},
 	{
-		"id": 8608624,
-		"due_at": "2024-09-09T03:59:00Z",
-		"unlock_at": "2024-09-06T04:00:00Z",
-		"lock_at": "2024-09-09T03:59:00Z",
+		"id": 8554259,
+		"due_at": "2024-10-05T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-10-06T03:59:00Z",
 		"points_possible": 10.0,
 		"grading_type": "points",
-		"assignment_group_id": 2252310,
+		"assignment_group_id": 2239006,
 		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:23:18Z",
-		"updated_at": "2024-08-09T20:23:18Z",
+		"created_at": "2024-07-11T16:21:25Z",
+		"updated_at": "2024-07-23T14:43:54Z",
 		"peer_reviews": false,
 		"automatic_peer_reviews": false,
 		"position": 4,
@@ -1101,27 +1192,34 @@
 		"grader_comments_visible_to_graders": true,
 		"final_grader_id": null,
 		"grader_names_visible_to_final_grader": true,
-		"allowed_attempts": -1,
+		"allowed_attempts": 2,
 		"annotatable_attachment_id": null,
 		"hide_in_gradebook": false,
 		"lock_info": {
-			"unlock_at": "2024-09-06T04:00:00Z",
-			"asset_string": "assignment_8608624"
+			"asset_string": "assignment_8554259",
+			"context_module": {
+				"id": 2696669,
+				"name": "Plate tectonics and Earthquakes",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-09-21T03:59:00Z"
+			}
 		},
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjZiNTVjZmI0LTcyMmItNDU1YS05NzNiLWM3NTJlMmRiM2JiOCJ9.e_OD1OkJxxif8T4yW4eVpE8akYTrfWzKPoYRYOFsn0U",
-		"lti_context_id": "6b55cfb4-722b-455a-973b-c752e2db3bb8",
-		"course_id": 1464092,
-		"name": "Quiz 3 - Virtual Memory",
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjA5MmQ5YTc3LWUzNDAtNDgzMi1hNmJkLTI2MDNmZTE1M2I0NSJ9.lDJaUMidZUQpzxrabVvnYtecdnLs1etYaCJcCsEU_-4",
+		"lti_context_id": "092d9a77-e340-4832-a6bd-2603fe153b45",
+		"course_id": 1461901,
+		"name": "Guided Notes: Earthquakes",
 		"submission_types": [
-			"online_quiz"
+			"online_upload"
 		],
 		"has_submitted_submissions": false,
 		"due_date_required": false,
 		"max_name_length": 255,
 		"in_closed_grading_period": false,
 		"graded_submissions_exist": false,
-		"is_quiz_assignment": true,
-		"can_duplicate": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
 		"original_course_id": null,
 		"original_assignment_id": null,
 		"original_lti_resource_link_id": null,
@@ -1131,31 +1229,181 @@
 		"important_dates": false,
 		"description": null,
 		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608624",
-		"quiz_id": 2562716,
-		"anonymous_submissions": false,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554259",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 2.5,
+				"description": "Theories surrounding earthquakes",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "_712",
+						"points": 2.0,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "_1800",
+						"points": 1.5,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_3417",
+				"points": 2.5,
+				"description": "Seafloor spreading and plate tectonics",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_2918",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_7066",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_5200",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_1850",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_9189",
+				"points": 2.5,
+				"description": "Seismic activity",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_2516",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_3641",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_2043",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_8746",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_6906",
+				"points": 2.5,
+				"description": "Documentary: San Andreas fault",
+				"long_description": "Video 4",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_1995",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_1163",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_7657",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_2135",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677556,
+			"title": "Guided notes (5)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
 		"published": true,
 		"only_visible_to_overrides": false,
 		"visible_to_everyone": true,
 		"locked_for_user": true,
-		"lock_explanation": "This assignment is locked until Sep 6 at 12am.",
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/quizzes/2562716/submissions?zip=1",
+		"lock_explanation": "This assignment is part of the module \u003cb\u003ePlate tectonics and Earthquakes\u003c/b\u003e, which is locked until Sep 20 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696669'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696669/prerequisites/assignment_8554259' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554259/submissions?zip=1",
 		"post_manually": false,
 		"anonymize_students": false,
 		"require_lockdown_browser": false,
 		"restrict_quantitative_data": false
 	},
 	{
-		"id": 8608605,
-		"due_at": "2024-09-16T03:59:00Z",
-		"unlock_at": "2024-09-13T04:00:00Z",
-		"lock_at": "2024-09-16T03:59:00Z",
-		"points_possible": 10.0,
+		"id": 8554261,
+		"due_at": "2024-09-23T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-09-24T03:59:00Z",
+		"points_possible": 20.0,
 		"grading_type": "points",
-		"assignment_group_id": 2252310,
+		"assignment_group_id": 2239006,
 		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:22:56Z",
-		"updated_at": "2024-08-09T20:22:56Z",
+		"created_at": "2024-07-11T16:21:26Z",
+		"updated_at": "2024-07-23T14:43:54Z",
 		"peer_reviews": false,
 		"automatic_peer_reviews": false,
 		"position": 5,
@@ -1173,27 +1421,34 @@
 		"grader_comments_visible_to_graders": true,
 		"final_grader_id": null,
 		"grader_names_visible_to_final_grader": true,
-		"allowed_attempts": -1,
+		"allowed_attempts": 2,
 		"annotatable_attachment_id": null,
 		"hide_in_gradebook": false,
 		"lock_info": {
-			"unlock_at": "2024-09-13T04:00:00Z",
-			"asset_string": "assignment_8608605"
+			"asset_string": "assignment_8554261",
+			"context_module": {
+				"id": 2696668,
+				"name": "Geological time (2 weeks)",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-09-07T03:59:00Z"
+			}
 		},
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjA1ZWE2ZmE0LWU2ODMtNDIwMy05NzM4LTYwODlmZDU3ZGNmYyJ9.gm7NfptL5TgZ0Bfj1qAX_QsJ1cMSBEbsUDqQ52QCod0",
-		"lti_context_id": "05ea6fa4-e683-4203-9738-6089fd57dcfc",
-		"course_id": 1464092,
-		"name": "Quiz 4 - Paging and the TLB",
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImNlMmEzYTRkLTM3ZDUtNDk1Zi1iNjhmLWNjMTdmMTI2OGJmMyJ9.JNAStgvfICSMdueFli_WIm3XpXtL_QXGQLLUBsqF8Cc",
+		"lti_context_id": "ce2a3a4d-37d5-495f-b68f-cc17f1268bf3",
+		"course_id": 1461901,
+		"name": "Guided Notes: Geological time (10 videos in total)",
 		"submission_types": [
-			"online_quiz"
+			"online_upload"
 		],
 		"has_submitted_submissions": false,
 		"due_date_required": false,
 		"max_name_length": 255,
 		"in_closed_grading_period": false,
 		"graded_submissions_exist": false,
-		"is_quiz_assignment": true,
-		"can_duplicate": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
 		"original_course_id": null,
 		"original_assignment_id": null,
 		"original_lti_resource_link_id": null,
@@ -1203,31 +1458,325 @@
 		"important_dates": false,
 		"description": null,
 		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608605",
-		"quiz_id": 2562696,
-		"anonymous_submissions": false,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554261",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 2.0,
+				"description": "Geological Time",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_2077",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_8676",
+				"points": 2.0,
+				"description": "That time oxygen almost killed everything",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_6550",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_1228",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_4153",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_2183",
+				"points": 2.0,
+				"description": "When the earth was purple",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_652",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_7558",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_4994",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_3324",
+				"points": 2.0,
+				"description": "A brief history of geological time",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_8766",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_5113",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_3648",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_4028",
+				"points": 2.0,
+				"description": "The search for the earliest life",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_8503",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_6310",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_3798",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_8908",
+				"points": 2.0,
+				"description": "How two microbes changed history",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_9325",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_7098",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_6724",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_5233",
+				"points": 2.0,
+				"description": "The last time the globe warmed",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_4775",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_9681",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_8545",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_6229",
+				"points": 2.0,
+				"description": "From the Cambrian explosion to the great dying",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_7952",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_8527",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_17",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_3879",
+				"points": 2.0,
+				"description": "The other explosion you should you know about",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_1521",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_5485",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_5572",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575017_1769",
+				"points": 2.0,
+				"description": "From the fall of dinos to the rise of humans",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575017_5246",
+						"points": 2.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions, additional notes, and at least 2 objectives (full sentence using action verb). Summary is NOT required."
+					},
+					{
+						"id": "1575017_7402",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Missing Objectives or Notes"
+					},
+					{
+						"id": "1575017_5972",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677542,
+			"title": "Guided notes - Geological time",
+			"points_possible": 20.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
 		"published": true,
 		"only_visible_to_overrides": false,
 		"visible_to_everyone": true,
 		"locked_for_user": true,
-		"lock_explanation": "This assignment is locked until Sep 13 at 12am.",
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/quizzes/2562696/submissions?zip=1",
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eGeological time (2 weeks)\u003c/b\u003e, which is locked until Sep 6 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696668'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696668/prerequisites/assignment_8554261' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554261/submissions?zip=1",
 		"post_manually": false,
 		"anonymize_students": false,
 		"require_lockdown_browser": false,
 		"restrict_quantitative_data": false
 	},
 	{
-		"id": 8608631,
-		"due_at": "2024-09-30T03:59:00Z",
-		"unlock_at": "2024-09-27T04:00:00Z",
-		"lock_at": null,
+		"id": 8554268,
+		"due_at": "2024-10-19T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-10-20T03:59:00Z",
 		"points_possible": 10.0,
 		"grading_type": "points",
-		"assignment_group_id": 2252310,
+		"assignment_group_id": 2239006,
 		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:23:24Z",
-		"updated_at": "2024-08-09T20:23:25Z",
+		"created_at": "2024-07-11T16:21:28Z",
+		"updated_at": "2024-07-23T14:43:55Z",
 		"peer_reviews": false,
 		"automatic_peer_reviews": false,
 		"position": 6,
@@ -1249,23 +1798,30 @@
 		"annotatable_attachment_id": null,
 		"hide_in_gradebook": false,
 		"lock_info": {
-			"unlock_at": "2024-09-27T04:00:00Z",
-			"asset_string": "assignment_8608631"
+			"asset_string": "assignment_8554268",
+			"context_module": {
+				"id": 2696671,
+				"name": "Streams and Floods",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-10-05T03:59:00Z"
+			}
 		},
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjgxMTNjZTE3LWI1YTEtNDQxMS05ZGMzLWJhNzU1OWUyZTcwZSJ9.hw7JmGfGN0YnTkl3x_XHCxYADp5FgoBQvqjw0ZaPUto",
-		"lti_context_id": "8113ce17-b5a1-4411-9dc3-ba7559e2e70e",
-		"course_id": 1464092,
-		"name": "Quiz 5 - Freespace Management, Paging, Swapping",
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6IjQxNTQwZjY1LTBmYzYtNDY1My1iYjNjLTNmNDAwNjZiMGJjOSJ9.DAn7OEZVlHKqSbYea9RIyQSVnK1xZgOtt9MQZTlzL94",
+		"lti_context_id": "41540f65-0fc6-4653-bb3c-3f40066b0bc9",
+		"course_id": 1461901,
+		"name": "Guided Notes: Streams and Floods",
 		"submission_types": [
-			"online_quiz"
+			"online_upload"
 		],
 		"has_submitted_submissions": false,
 		"due_date_required": false,
 		"max_name_length": 255,
 		"in_closed_grading_period": false,
 		"graded_submissions_exist": false,
-		"is_quiz_assignment": true,
-		"can_duplicate": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
 		"original_course_id": null,
 		"original_assignment_id": null,
 		"original_lti_resource_link_id": null,
@@ -1275,31 +1831,147 @@
 		"important_dates": false,
 		"description": null,
 		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608631",
-		"quiz_id": 2562723,
-		"anonymous_submissions": false,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554268",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "1575016_9406",
+				"points": 3.34,
+				"description": "Streams and floods",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 3.34,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_1998",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615822_4117",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_7537",
+				"points": 3.33,
+				"description": "Flood hazards",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_3614",
+						"points": 3.33,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_5960",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615822_5002",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_9020",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_3086",
+				"points": 3.33,
+				"description": "Flood preventatives",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_194",
+						"points": 3.33,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_3525",
+						"points": 2.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1575016_1835",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_3203",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677544,
+			"title": "Guided notes - Streams and Floods",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
 		"published": true,
 		"only_visible_to_overrides": false,
 		"visible_to_everyone": true,
 		"locked_for_user": true,
-		"lock_explanation": "This assignment is locked until Sep 27 at 12am.",
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/quizzes/2562723/submissions?zip=1",
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eStreams and Floods\u003c/b\u003e, which is locked until Oct 4 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696671'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696671/prerequisites/assignment_8554268' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554268/submissions?zip=1",
 		"post_manually": false,
 		"anonymize_students": false,
 		"require_lockdown_browser": false,
 		"restrict_quantitative_data": false
 	},
 	{
-		"id": 8608613,
-		"due_at": "2024-10-12T03:59:00Z",
-		"unlock_at": "2024-10-10T04:00:00Z",
-		"lock_at": "2024-10-12T03:59:00Z",
+		"id": 8554258,
+		"due_at": "2024-10-26T03:59:59Z",
+		"unlock_at": null,
+		"lock_at": "2024-10-26T03:59:59Z",
 		"points_possible": 10.0,
 		"grading_type": "points",
-		"assignment_group_id": 2252310,
+		"assignment_group_id": 2239006,
 		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:23:06Z",
-		"updated_at": "2024-08-09T20:23:06Z",
+		"created_at": "2024-07-11T16:21:24Z",
+		"updated_at": "2024-07-23T14:34:16Z",
 		"peer_reviews": false,
 		"automatic_peer_reviews": false,
 		"position": 7,
@@ -1321,23 +1993,30 @@
 		"annotatable_attachment_id": null,
 		"hide_in_gradebook": false,
 		"lock_info": {
-			"unlock_at": "2024-10-10T04:00:00Z",
-			"asset_string": "assignment_8608613"
+			"asset_string": "assignment_8554258",
+			"context_module": {
+				"id": 2696672,
+				"name": "Coastal Flooding",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-10-12T03:59:00Z"
+			}
 		},
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImU5ZTk0MWNiLWQ2MDMtNGJiNS04ZTljLTNlN2NlODFlMDdkMCJ9.nJN4hUpZKwCeQSJJ-S3yR0Zhcm_ZRsf7IOWCca01ZV8",
-		"lti_context_id": "e9e941cb-d603-4bb5-8e9c-3e7ce81e07d0",
-		"course_id": 1464092,
-		"name": "Quiz 6 - Threads and Locks",
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImQyZTY3ZDJlLTk1OTItNDg5My04NDQxLTI0ZTg5MTBhMTYyYiJ9.udDU5ZSWBN1Y0VA52SpmY0UnVBV_OREYDUsx0x57_4M",
+		"lti_context_id": "d2e67d2e-9592-4893-8441-24e8910a162b",
+		"course_id": 1461901,
+		"name": "Guided Notes: Coastal Flooding",
 		"submission_types": [
-			"online_quiz"
+			"online_upload"
 		],
 		"has_submitted_submissions": false,
 		"due_date_required": false,
 		"max_name_length": 255,
 		"in_closed_grading_period": false,
 		"graded_submissions_exist": false,
-		"is_quiz_assignment": true,
-		"can_duplicate": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
 		"original_course_id": null,
 		"original_assignment_id": null,
 		"original_lti_resource_link_id": null,
@@ -1347,34 +2026,128 @@
 		"important_dates": false,
 		"description": null,
 		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608613",
-		"quiz_id": 2562704,
-		"anonymous_submissions": false,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554258",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 5.0,
+				"description": "Sinking cities: Miami",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": "Completely answers all questions"
+					},
+					{
+						"id": "_712",
+						"points": 3.75,
+						"description": "Partial points",
+						"long_description": "Answers most questions"
+					},
+					{
+						"id": "1615825_9375",
+						"points": 2.5,
+						"description": "Half",
+						"long_description": "Answers half of the questions"
+					},
+					{
+						"id": "1615825_2106",
+						"points": 1.25,
+						"description": "Poor",
+						"long_description": "Answers less than half of the questions"
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_8685",
+				"points": 5.0,
+				"description": "Global Flooding in the next 100 Years",
+				"long_description": null,
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_564",
+						"points": 5.0,
+						"description": "Full Marks",
+						"long_description": "Completely answers all questions"
+					},
+					{
+						"id": "1575016_2172",
+						"points": 3.75,
+						"description": "Partial points",
+						"long_description": "Answers most questions"
+					},
+					{
+						"id": "1615825_2318",
+						"points": 2.5,
+						"description": "Half",
+						"long_description": "Answers half of the questions"
+					},
+					{
+						"id": "1615825_1284",
+						"points": 1.25,
+						"description": "Poor",
+						"long_description": "Answers less than half of the questions"
+					},
+					{
+						"id": "1575016_1680",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677547,
+			"title": "Guided notes (1)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
 		"published": true,
 		"only_visible_to_overrides": false,
 		"visible_to_everyone": true,
 		"locked_for_user": true,
-		"lock_explanation": "This assignment is locked until Oct 10 at 12am.",
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/quizzes/2562704/submissions?zip=1",
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eCoastal Flooding\u003c/b\u003e, which is locked until Oct 11 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696672'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696672/prerequisites/assignment_8554258' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554258/submissions?zip=1",
 		"post_manually": false,
 		"anonymize_students": false,
 		"require_lockdown_browser": false,
 		"restrict_quantitative_data": false
 	},
 	{
-		"id": 8608621,
-		"due_at": "2024-10-21T03:59:00Z",
-		"unlock_at": "2024-10-18T04:00:00Z",
-		"lock_at": "2024-10-21T03:59:00Z",
+		"id": 8554263,
+		"due_at": "2024-11-02T03:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-11-03T03:59:59Z",
 		"points_possible": 10.0,
 		"grading_type": "points",
-		"assignment_group_id": 2252310,
+		"assignment_group_id": 2239006,
 		"grading_standard_id": null,
-		"created_at": "2024-08-09T20:23:14Z",
-		"updated_at": "2024-08-09T20:23:15Z",
+		"created_at": "2024-07-11T16:21:26Z",
+		"updated_at": "2024-07-23T14:43:56Z",
 		"peer_reviews": false,
 		"automatic_peer_reviews": false,
-		"position": 9,
+		"position": 8,
 		"grade_group_students_individually": false,
 		"anonymous_peer_reviews": false,
 		"group_category_id": null,
@@ -1393,23 +2166,30 @@
 		"annotatable_attachment_id": null,
 		"hide_in_gradebook": false,
 		"lock_info": {
-			"unlock_at": "2024-10-18T04:00:00Z",
-			"asset_string": "assignment_8608621"
+			"asset_string": "assignment_8554263",
+			"context_module": {
+				"id": 2696673,
+				"name": "Glaciers, wind, and deserts",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-10-19T03:59:00Z"
+			}
 		},
-		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImE5NDJkMWIyLTMyNjMtNDY2MC1hZDFiLTc2NjhmZmI4MjZmMCJ9.RUKP24rxbSZ2zKVnQA2rIp78rBO8egyoi6dm5yO0J-Y",
-		"lti_context_id": "a942d1b2-3263-4660-ad1b-7668ffb826f0",
-		"course_id": 1464092,
-		"name": "Quiz 8 - Concurrency Bugs",
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6Ijg3NmQyMjI4LTZkOGEtNDVmNS04ZGI1LWRlNDliMDBhNjBmNiJ9.o3eBZckxbNEKwoo5j1dNZVHi6eDGOP7jvRALvNLmAN0",
+		"lti_context_id": "876d2228-6d8a-45f5-8db5-de49b00a60f6",
+		"course_id": 1461901,
+		"name": "Guided Notes: Glaciers, wind, and deserts",
 		"submission_types": [
-			"online_quiz"
+			"online_upload"
 		],
 		"has_submitted_submissions": false,
 		"due_date_required": false,
 		"max_name_length": 255,
 		"in_closed_grading_period": false,
 		"graded_submissions_exist": false,
-		"is_quiz_assignment": true,
-		"can_duplicate": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
 		"original_course_id": null,
 		"original_assignment_id": null,
 		"original_lti_resource_link_id": null,
@@ -1419,21 +2199,336 @@
 		"important_dates": false,
 		"description": null,
 		"muted": true,
-		"html_url": "https://webcourses.ucf.edu/courses/1464092/assignments/8608621",
-		"quiz_id": 2562713,
-		"anonymous_submissions": false,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554263",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "_296",
+				"points": 2.5,
+				"description": "Glaciers",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "_712",
+						"points": 2.0,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "_1800",
+						"points": 1.5,
+						"description": "Partial points",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_3644",
+				"points": 2.5,
+				"description": "Why scientists are so worried about this glacier",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_3669",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_4313",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_6890",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_7754",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_9274",
+				"points": 2.5,
+				"description": "Wind",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_3914",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_7610",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_1042",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_7161",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1615819_1085",
+				"points": 2.5,
+				"description": "Deserts",
+				"long_description": "Video 4",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1615819_5099",
+						"points": 2.5,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1615819_3626",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615819_6211",
+						"points": 1.5,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1615819_178",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			}
+		],
+		"rubric_settings": {
+			"id": 1677557,
+			"title": "Guided notes (6)",
+			"points_possible": 10.0,
+			"free_form_criterion_comments": false,
+			"hide_score_total": false,
+			"hide_points": false
+		},
 		"published": true,
 		"only_visible_to_overrides": false,
 		"visible_to_everyone": true,
 		"locked_for_user": true,
-		"lock_explanation": "This assignment is locked until Oct 18 at 12am.",
-		"submissions_download_url": "https://webcourses.ucf.edu/courses/1464092/quizzes/2562713/submissions?zip=1",
+		"lock_explanation": "This assignment is part of the module \u003cb\u003eGlaciers, wind, and deserts\u003c/b\u003e, which is locked until Oct 18 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696673'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696673/prerequisites/assignment_8554263' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554263/submissions?zip=1",
 		"post_manually": false,
 		"anonymize_students": false,
 		"require_lockdown_browser": false,
 		"restrict_quantitative_data": false
-	}
-]ption": ""
+	},
+	{
+		"id": 8554269,
+		"due_at": "2024-11-16T04:59:00Z",
+		"unlock_at": null,
+		"lock_at": "2024-11-17T04:59:00Z",
+		"points_possible": 10.0,
+		"grading_type": "points",
+		"assignment_group_id": 2239006,
+		"grading_standard_id": null,
+		"created_at": "2024-07-11T16:21:29Z",
+		"updated_at": "2024-07-11T16:21:54Z",
+		"peer_reviews": false,
+		"automatic_peer_reviews": false,
+		"position": 11,
+		"grade_group_students_individually": false,
+		"anonymous_peer_reviews": false,
+		"group_category_id": null,
+		"post_to_sis": false,
+		"moderated_grading": false,
+		"omit_from_final_grade": false,
+		"intra_group_peer_reviews": false,
+		"anonymous_instructor_annotations": false,
+		"anonymous_grading": false,
+		"graders_anonymous_to_graders": false,
+		"grader_count": 0,
+		"grader_comments_visible_to_graders": true,
+		"final_grader_id": null,
+		"grader_names_visible_to_final_grader": true,
+		"allowed_attempts": 2,
+		"annotatable_attachment_id": null,
+		"hide_in_gradebook": false,
+		"lock_info": {
+			"asset_string": "assignment_8554269",
+			"context_module": {
+				"id": 2696675,
+				"name": "Volcanoes",
+				"context_type": "Course",
+				"context_id": 1461901,
+				"workflow_state": "active",
+				"unlock_at": "2024-11-08T05:00:00Z"
+			}
+		},
+		"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImEzYTBlZDZhLWU3ZjYtNDFiZC1hZTFlLWJhNzQwNzk3NDI5YSJ9.-ahUF88gfgp5fODEoWxHR5sBmL5pJ773sJO3UoVEdA4",
+		"lti_context_id": "a3a0ed6a-e7f6-41bd-ae1e-ba740797429a",
+		"course_id": 1461901,
+		"name": "Guided Notes: Volcanoes",
+		"submission_types": [
+			"online_upload"
+		],
+		"has_submitted_submissions": false,
+		"due_date_required": false,
+		"max_name_length": 255,
+		"in_closed_grading_period": false,
+		"graded_submissions_exist": false,
+		"is_quiz_assignment": false,
+		"can_duplicate": true,
+		"original_course_id": null,
+		"original_assignment_id": null,
+		"original_lti_resource_link_id": null,
+		"original_assignment_name": null,
+		"original_quiz_id": null,
+		"workflow_state": "published",
+		"important_dates": false,
+		"description": null,
+		"muted": true,
+		"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554269",
+		"allowed_extensions": [
+			"doc",
+			"docx"
+		],
+		"use_rubric_for_grading": true,
+		"free_form_criterion_comments": false,
+		"rubric": [
+			{
+				"id": "1575016_8431",
+				"points": 3.0,
+				"description": "Introduction to volcanoes",
+				"long_description": "Video 1",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "blank",
+						"points": 3.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_9456",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615826_5714",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "blank_2",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_2331",
+				"points": 3.0,
+				"description": "Types of volcanoes and hazards",
+				"long_description": "Video 2",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_1148",
+						"points": 3.0,
+						"description": "Full Marks",
+						"long_description": "Includes definitions/additional notes, at least 2 objectives (full sentence using action verb), summary has 5 or more sentences."
+					},
+					{
+						"id": "1575016_1960",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, less than 2 objectives, summary has less than 5 sentences."
+					},
+					{
+						"id": "1615826_3815",
+						"points": 1.0,
+						"description": "Partial",
+						"long_description": "Includes definitions/additional notes, no objectives, summary has less than 4 sentences."
+					},
+					{
+						"id": "1575016_1679",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
+					}
+				]
+			},
+			{
+				"id": "1575016_9235",
+				"points": 4.0,
+				"description": "Volcano documentary",
+				"long_description": "Video 3",
+				"ignore_for_scoring": null,
+				"criterion_use_range": false,
+				"ratings": [
+					{
+						"id": "1575016_7510",
+						"points": 4.0,
+						"description": "Full Marks",
+						"long_description": "Fully completed the documentary questions"
+					},
+					{
+						"id": "1575016_7094",
+						"points": 2.0,
+						"description": "Partial",
+						"long_description": "Completed half of the documentary questions"
+					},
+					{
+						"id": "1575016_4238",
+						"points": 0.0,
+						"description": "No Marks",
+						"long_description": ""
 					}
 				]
 			}
