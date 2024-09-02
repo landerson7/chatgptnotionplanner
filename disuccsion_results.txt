@@ -152,7 +152,7 @@
 			"has_submitted_submissions": false,
 			"is_quiz_assignment": false,
 			"require_lockdown_browser": false,
-			"Locked_For_User": true
+			"Locked_For_User": false
 		},
 		"Created_At": "2024-07-11T16:21:13Z"
 	},

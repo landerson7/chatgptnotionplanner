@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"time"
 )
@@ -84,8 +85,24 @@ func main() {
 	SendToNotion(course+" Assignments as of "+FormatDate(dt), todos)
 	SendAllAssignmentsToNotion()*/
 	//DeleteNotionPage("cdf832e3-454f-47cf-ab04-d2d63d4a6e00")
+	//GetAllAssignmentsByModule()
+	//GetAllAssignments()
+
+	//Main call
 	ArchivePageByName(FormatDate(time.Now()) + " Assignments and Discussions Due Within a Month")
-	SendAllAssignmentsToOneNotionPage()
+	notionRequest := SendAllAssignmentsToOneNotionPage()
+	chatgptData, err := json.Marshal(notionRequest)
+	if err != nil {
+		fmt.Println("error marshalling chatpgt json")
+	}
+
+	if time.Now().Weekday() == time.Monday {
+		response := generateWeeklySchedule(string(chatgptData))
+		fmt.Println(response)
+		sendTextToNotionPage(FormatDate(time.Now())+" ChatGPT Weekly Schedule", "ChatGPT generated weekly schedule", response)
+	}
+
+	//End of main call
 	//updateToDoList("cdf832e3-454f-47cf-ab04-d2d63d4a6e00", todos)
 }
 func FormatDate(t time.Time) string {

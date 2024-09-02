@@ -1391,7 +1391,7 @@
 	{
 		"id": 7761142,
 		"title": "Case study: The Moon: What’s It Made of? Where Did It Come From? Part III or IV",
-		"last_reply_at": "2024-08-30T18:19:33Z",
+		"last_reply_at": "2024-09-02T06:00:00Z",
 		"created_at": "2024-07-11T16:21:14Z",
 		"delayed_post_at": null,
 		"posted_at": null,
@@ -1408,7 +1408,7 @@
 		"anonymous_state": null,
 		"summary_enabled": false,
 		"user_name": null,
-		"discussion_subentry_count": 34,
+		"discussion_subentry_count": 332,
 		"permissions": {
 			"attach": true,
 			"update": false,
@@ -1417,16 +1417,16 @@
 			"manage_assign_to": false
 		},
 		"require_initial_post": true,
-		"user_can_see_posts": false,
+		"user_can_see_posts": true,
 		"podcast_url": null,
 		"read_state": "read",
-		"unread_count": 34,
+		"unread_count": 318,
 		"subscribed": false,
 		"attachments": [],
 		"published": true,
 		"can_unpublish": false,
 		"locked": false,
-		"can_lock": false,
+		"can_lock": true,
 		"comments_disabled": false,
 		"author": {},
 		"html_url": "https://webcourses.ucf.edu/courses/1461901/discussion_topics/7761142",
@@ -1438,7 +1438,6 @@
 		"group_topic_children": [],
 		"locked_for_user": false,
 		"message": "\u003clink rel=\"stylesheet\" href=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cp\u003eFor the following discussion you will need to read \u003ca class=\"instructure_file_link instructure_scribd_file\" title=\"moon_formation.pdf\" href=\"https://webcourses.ucf.edu/courses/1461901/files/107908324/download?verifier=sLY4WfBkaAV6Cz10Vb8GYnW9dvam7iqTXhPWJ4br\u0026amp;wrap=1\" data-api-endpoint=\"https://webcourses.ucf.edu/api/v1/courses/1461901/files/107908324\" data-api-returntype=\"File\"\u003ethis case study\u003c/a\u003e in full and answer the questions throughout (this case study will show up on your exam). You will then need to chose either Part III or Part IV and discuss your answers for that section. In your post make sure to include the question and your answer to it. \u003cstrong\u003eYour post needs to be in complete sentences.\u0026nbsp;Your post should be between 150-250 words and\u003c/strong\u003e\u003cspan\u003e\u003cstrong\u003e\u0026nbsp;you need to include your word count in brackets at the end of your post\u003c/strong\u003e.\u0026nbsp;\u003c/span\u003eYou will need to include in your discussion post proof from the article to support your response. Once you post your response you need to respond to at least two other post and respond back to someone if they replied to your post. When responding to another post you can discuss their responses and if you agree (or disagree) make sure to include any supporting statements from the article as to whether or not it supports it. \u0026nbsp;\u003c/p\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003eThe overall goal for this case is for you to practice confirmation/disconfirmation reasoning while learning the basics of the solar system and Moon formation. More specifically, you will be able to:\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Recite the standard model for solar system formation.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Correlate specific predictions made by the standard model with confirming observations from our solar system.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Recite hypotheses for Moon formation and make corresponding predictions as to Moon rock composition.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Compare predicted with observed Moon rock content and eliminate inconsistent Moon formation hypotheses, e.g., “observed is less than predicted by model A, therefore model A is rejected.”\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Confirm the currently accepted Moon formation hypothesis based upon comparative rock content,\u0026nbsp;\u003c/span\u003e\u003cspan style=\"font-family: inherit; font-size: 1rem;\"\u003ee.g., “observed is equal to that predicted by model B, therefore model B is the most likely model to be correct.”\u003c/span\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003eThis case study is divided into seven sections, the first five of which are mandatory for achieving the learning objectives; the remaining two sections are optional (Part VI and VII). Each part of the case should be completed before moving to the next section.\u0026nbsp;\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cstrong\u003e[342]\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
-		"subscription_hold": "initial_post_required",
 		"assignment": {
 			"id": 8554248,
 			"description": "\u003clink rel=\"stylesheet\" href=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cp\u003eFor the following discussion you will need to read \u003ca class=\"instructure_file_link instructure_scribd_file\" title=\"moon_formation.pdf\" href=\"https://webcourses.ucf.edu/courses/1461901/files/107908324/download?verifier=sLY4WfBkaAV6Cz10Vb8GYnW9dvam7iqTXhPWJ4br\u0026amp;wrap=1\" data-api-endpoint=\"https://webcourses.ucf.edu/api/v1/courses/1461901/files/107908324\" data-api-returntype=\"File\"\u003ethis case study\u003c/a\u003e in full and answer the questions throughout (this case study will show up on your exam). You will then need to chose either Part III or Part IV and discuss your answers for that section. In your post make sure to include the question and your answer to it. \u003cstrong\u003eYour post needs to be in complete sentences.\u0026nbsp;Your post should be between 150-250 words and\u003c/strong\u003e\u003cspan\u003e\u003cstrong\u003e\u0026nbsp;you need to include your word count in brackets at the end of your post\u003c/strong\u003e.\u0026nbsp;\u003c/span\u003eYou will need to include in your discussion post proof from the article to support your response. Once you post your response you need to respond to at least two other post and respond back to someone if they replied to your post. When responding to another post you can discuss their responses and if you agree (or disagree) make sure to include any supporting statements from the article as to whether or not it supports it. \u0026nbsp;\u003c/p\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003eThe overall goal for this case is for you to practice confirmation/disconfirmation reasoning while learning the basics of the solar system and Moon formation. More specifically, you will be able to:\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Recite the standard model for solar system formation.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Correlate specific predictions made by the standard model with confirming observations from our solar system.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Recite hypotheses for Moon formation and make corresponding predictions as to Moon rock composition.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Compare predicted with observed Moon rock content and eliminate inconsistent Moon formation hypotheses, e.g., “observed is less than predicted by model A, therefore model A is rejected.”\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003e• Confirm the currently accepted Moon formation hypothesis based upon comparative rock content,\u0026nbsp;\u003c/span\u003e\u003cspan style=\"font-family: inherit; font-size: 1rem;\"\u003ee.g., “observed is equal to that predicted by model B, therefore model B is the most likely model to be correct.”\u003c/span\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003eThis case study is divided into seven sections, the first five of which are mandatory for achieving the learning objectives; the remaining two sections are optional (Part VI and VII). Each part of the case should be completed before moving to the next section.\u0026nbsp;\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cstrong\u003e[342]\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
@@ -1482,7 +1481,7 @@
 			"due_date_required": false,
 			"max_name_length": 255,
 			"in_closed_grading_period": false,
-			"graded_submissions_exist": false,
+			"graded_submissions_exist": true,
 			"is_quiz_assignment": false,
 			"can_duplicate": true,
 			"original_course_id": null,
@@ -1753,7 +1752,7 @@
 		"permissions": {
 			"attach": true,
 			"update": false,
-			"reply": false,
+			"reply": true,
 			"delete": false,
 			"manage_assign_to": false
 		},
@@ -1777,23 +1776,12 @@
 		"can_group": true,
 		"topic_children": [],
 		"group_topic_children": [],
-		"locked_for_user": true,
-		"lock_info": {
-			"asset_string": "discussion_topic_7761140",
-			"context_module": {
-				"id": 2696666,
-				"name": "Rocks and minerals",
-				"context_type": "Course",
-				"context_id": 1461901,
-				"workflow_state": "active",
-				"unlock_at": "2024-08-31T03:59:00Z"
-			}
-		},
-		"lock_explanation": "This topic is part of the module \u003cb\u003eRocks and minerals\u003c/b\u003e, which is locked until Aug 30 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696666'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696666/prerequisites/discussion_topic_7761140' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
-		"message": "This topic is part of the module \u003cb\u003eRocks and minerals\u003c/b\u003e, which is locked until Aug 30 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696666'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696666/prerequisites/discussion_topic_7761140' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"locked_for_user": false,
+		"message": "\u003clink rel=\"stylesheet\" href=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cp\u003eFor the following discussion you will need to read \u003ca class=\"instructure_file_link instructure_scribd_file\" title=\"Week 2 atomic_mass.pdf\" href=\"https://webcourses.ucf.edu/courses/1461901/files/107908326/download?verifier=ZNhxq8pqBjOIEa96uXPVUl2cfrEnemXAfOsGj4Rj\u0026amp;wrap=1\" data-api-endpoint=\"https://webcourses.ucf.edu/api/v1/courses/1461901/files/107908326\" data-api-returntype=\"File\"\u003ethis case study\u003c/a\u003e in full and answer the questions throughout (this case study will show up on your exam). For this weeks discussion you will need to post a picture of your work (or a document) and steps on how you determined the identity of element 1 and element 2. \u0026nbsp;You and your classmates will work together to answer the questions in this case study. Once you post your response you will need to respond to at least two other post and respond back to someone if they replied to your post. When responding to another post you can discuss how they got their answer or ask for clarification on their response. You can also respond to another student providing helpful feedback on their work.\u003c/p\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003eThe purpose of this case is two-fold: first, to calculate the average atomic mass of elements and second to reinforce problem-solving strategy. By the end of this case study you\u0026nbsp;will be able to:\u003c/span\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003e• Extract information from graphs.\u003cbr\u003e• Calculate the average atomic mass of an element\u0026nbsp;\u003c/span\u003e\u003cspan\u003efrom its isotopes’ mass and abundance.\u003cbr\u003e• Explain why the atomic masses in the periodic table\u0026nbsp;\u003c/span\u003e\u003cspan\u003eare not integer numbers.\u003cbr\u003e• Practice problem-solving strategy.\u003c/span\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv class=\"doc-container\"\u003e\u003cdiv class=\"ucf-accordion\" aria-label=\"Accordion Control Group Buttons\"\u003e\u003ch3\u003e\u003ca class=\"accordion-control\" href=\"#\" aria-controls=\"content-1\" aria-expanded=\"false\"\u003eHints\u003c/a\u003e\u003c/h3\u003e\u003cdiv id=\"content-1\" class=\"accordion-content\" aria-hidden=\"true\"\u003e\u003cdiv class=\"page\" title=\"Page 2\"\u003e\u003cdiv class=\"section\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003eStep 1: \u003c/span\u003e\u003cspan\u003eCalculate the total particle counted for an element by adding the values of its isotopes.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003eStep 2: \u003c/span\u003e\u003cspan\u003eCalculate the abundance of each isotope using the relation: Abundance= (particle count / total particle) * 100\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003eStep 3: \u003c/span\u003e\u003cspan\u003eFor each isotope, multiply the mass by its abundance.\u003cbr\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003eStep 4: \u003c/span\u003e\u003cspan\u003eCalculate the atomic mass by adding all the products of step 3 and dividing by 100. \u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003eStep 5: \u003c/span\u003e\u003cspan\u003eCheck the periodic table for an element with the calculated atomic mass.\u003c/span\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cp\u003e\u0026nbsp;\u003c/p\u003e\u003c/div\u003e\u003ch3\u003e\u003ca class=\"accordion-control\" href=\"#\" aria-controls=\"content-2\" aria-expanded=\"false\"\u003eMass spectrometer\u003c/a\u003e\u003c/h3\u003e\u003cdiv id=\"content-2\" class=\"accordion-content\" aria-hidden=\"true\"\u003e\u003cp\u003e\u003cspan style=\"font-size: 12pt;\"\u003e\u003ciframe style=\"overflow-x: hidden; overflow-y: auto; border: 0; width: 100%; height: 500px;\" src=\"https://canvas-lti.cdl.ucf.edu/able/video/youtube/EzvQzImBuq8/4433\" allowfullscreen=\"allowfullscreen\"\u003e\u003c/iframe\u003e\u0026nbsp;\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u0026nbsp;\u003c/p\u003e\u003c/div\u003e\u003ch3\u003e\u003ca class=\"accordion-control\" href=\"#\" aria-controls=\"content-3\" aria-expanded=\"false\"\u003eIsotope abundance example 1\u003c/a\u003e\u003c/h3\u003e\u003cdiv id=\"content-3\" class=\"accordion-content\" aria-hidden=\"true\"\u003e\u003cp\u003e\u003ciframe style=\"overflow-x: hidden; overflow-y: auto; border: 0; width: 100%; height: 500px;\" src=\"https://canvas-lti.cdl.ucf.edu/able/video/youtube/NsLhGR8QE30/4434\" allowfullscreen=\"allowfullscreen\"\u003e\u003c/iframe\u003e\u0026nbsp;\u003c/p\u003e\u003cp\u003e\u0026nbsp;\u003c/p\u003e\u003c/div\u003e\u003ch3\u003e\u003ca class=\"accordion-control\" href=\"#\" aria-controls=\"content-4\" aria-expanded=\"false\"\u003eIsotope abundance example 2\u003c/a\u003e\u003c/h3\u003e\u003cdiv id=\"content-4\" class=\"accordion-content\" aria-hidden=\"true\"\u003e\u003cp\u003e\u003ciframe style=\"overflow-x: hidden; overflow-y: auto; border: 0; width: 100%; height: 500px;\" src=\"https://canvas-lti.cdl.ucf.edu/able/video/6BqjQ4BbzHE/4435\" allowfullscreen=\"allowfullscreen\"\u003e\u003c/iframe\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
 		"subscription_hold": "initial_post_required",
 		"assignment": {
 			"id": 8554246,
+			"description": "\u003clink rel=\"stylesheet\" href=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cp\u003eFor the following discussion you will need to read \u003ca class=\"instructure_file_link instructure_scribd_file\" title=\"Week 2 atomic_mass.pdf\" href=\"https://webcourses.ucf.edu/courses/1461901/files/107908326/download?verifier=ZNhxq8pqBjOIEa96uXPVUl2cfrEnemXAfOsGj4Rj\u0026amp;wrap=1\" data-api-endpoint=\"https://webcourses.ucf.edu/api/v1/courses/1461901/files/107908326\" data-api-returntype=\"File\"\u003ethis case study\u003c/a\u003e in full and answer the questions throughout (this case study will show up on your exam). For this weeks discussion you will need to post a picture of your work (or a document) and steps on how you determined the identity of element 1 and element 2. \u0026nbsp;You and your classmates will work together to answer the questions in this case study. Once you post your response you will need to respond to at least two other post and respond back to someone if they replied to your post. When responding to another post you can discuss how they got their answer or ask for clarification on their response. You can also respond to another student providing helpful feedback on their work.\u003c/p\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003eThe purpose of this case is two-fold: first, to calculate the average atomic mass of elements and second to reinforce problem-solving strategy. By the end of this case study you\u0026nbsp;will be able to:\u003c/span\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cdiv class=\"page\" title=\"Page 1\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003e• Extract information from graphs.\u003cbr\u003e• Calculate the average atomic mass of an element\u0026nbsp;\u003c/span\u003e\u003cspan\u003efrom its isotopes’ mass and abundance.\u003cbr\u003e• Explain why the atomic masses in the periodic table\u0026nbsp;\u003c/span\u003e\u003cspan\u003eare not integer numbers.\u003cbr\u003e• Practice problem-solving strategy.\u003c/span\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv class=\"doc-container\"\u003e\u003cdiv class=\"ucf-accordion\" aria-label=\"Accordion Control Group Buttons\"\u003e\u003ch3\u003e\u003ca class=\"accordion-control\" href=\"#\" aria-controls=\"content-1\" aria-expanded=\"false\"\u003eHints\u003c/a\u003e\u003c/h3\u003e\u003cdiv id=\"content-1\" class=\"accordion-content\" aria-hidden=\"true\"\u003e\u003cdiv class=\"page\" title=\"Page 2\"\u003e\u003cdiv class=\"section\"\u003e\u003cdiv class=\"layoutArea\"\u003e\u003cdiv class=\"column\"\u003e\u003cp\u003e\u003cspan\u003eStep 1: \u003c/span\u003e\u003cspan\u003eCalculate the total particle counted for an element by adding the values of its isotopes.\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003eStep 2: \u003c/span\u003e\u003cspan\u003eCalculate the abundance of each isotope using the relation: Abundance= (particle count / total particle) * 100\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003eStep 3: \u003c/span\u003e\u003cspan\u003eFor each isotope, multiply the mass by its abundance.\u003cbr\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003eStep 4: \u003c/span\u003e\u003cspan\u003eCalculate the atomic mass by adding all the products of step 3 and dividing by 100. \u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan\u003eStep 5: \u003c/span\u003e\u003cspan\u003eCheck the periodic table for an element with the calculated atomic mass.\u003c/span\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cp\u003e\u0026nbsp;\u003c/p\u003e\u003c/div\u003e\u003ch3\u003e\u003ca class=\"accordion-control\" href=\"#\" aria-controls=\"content-2\" aria-expanded=\"false\"\u003eMass spectrometer\u003c/a\u003e\u003c/h3\u003e\u003cdiv id=\"content-2\" class=\"accordion-content\" aria-hidden=\"true\"\u003e\u003cp\u003e\u003cspan style=\"font-size: 12pt;\"\u003e\u003ciframe style=\"overflow-x: hidden; overflow-y: auto; border: 0; width: 100%; height: 500px;\" src=\"https://canvas-lti.cdl.ucf.edu/able/video/youtube/EzvQzImBuq8/4433\" allowfullscreen=\"allowfullscreen\"\u003e\u003c/iframe\u003e\u0026nbsp;\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u0026nbsp;\u003c/p\u003e\u003c/div\u003e\u003ch3\u003e\u003ca class=\"accordion-control\" href=\"#\" aria-controls=\"content-3\" aria-expanded=\"false\"\u003eIsotope abundance example 1\u003c/a\u003e\u003c/h3\u003e\u003cdiv id=\"content-3\" class=\"accordion-content\" aria-hidden=\"true\"\u003e\u003cp\u003e\u003ciframe style=\"overflow-x: hidden; overflow-y: auto; border: 0; width: 100%; height: 500px;\" src=\"https://canvas-lti.cdl.ucf.edu/able/video/youtube/NsLhGR8QE30/4434\" allowfullscreen=\"allowfullscreen\"\u003e\u003c/iframe\u003e\u0026nbsp;\u003c/p\u003e\u003cp\u003e\u0026nbsp;\u003c/p\u003e\u003c/div\u003e\u003ch3\u003e\u003ca class=\"accordion-control\" href=\"#\" aria-controls=\"content-4\" aria-expanded=\"false\"\u003eIsotope abundance example 2\u003c/a\u003e\u003c/h3\u003e\u003cdiv id=\"content-4\" class=\"accordion-content\" aria-hidden=\"true\"\u003e\u003cp\u003e\u003ciframe style=\"overflow-x: hidden; overflow-y: auto; border: 0; width: 100%; height: 500px;\" src=\"https://canvas-lti.cdl.ucf.edu/able/video/6BqjQ4BbzHE/4435\" allowfullscreen=\"allowfullscreen\"\u003e\u003c/iframe\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
 			"due_at": "2024-09-09T03:59:00Z",
 			"unlock_at": null,
 			"lock_at": "2024-09-10T03:59:00Z",
@@ -1823,18 +1811,7 @@
 			"allowed_attempts": -1,
 			"annotatable_attachment_id": null,
 			"hide_in_gradebook": false,
-			"lock_info": {
-				"asset_string": "discussion_topic_7761140",
-				"context_module": {
-					"id": 2696666,
-					"name": "Rocks and minerals",
-					"context_type": "Course",
-					"context_id": 1461901,
-					"workflow_state": "active",
-					"unlock_at": "2024-08-31T03:59:00Z"
-				}
-			},
-			"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImFiNWExOTc5LWVjOGQtNGVjZC1iNTlhLTQ4NzczYTQxMTRmYiJ9.Q0IFEeFfC7tnm8xXkMyqtawLUMr2h9DPxlG1RqCTeZA",
+			"secure_params": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsdGlfYXNzaWdubWVudF9pZCI6ImFiNWExOTc5LWVjOGQtNGVjZC1iNTlhLTQ4NzczYTQxMTRmYiIsImx0aV9hc3NpZ25tZW50X2Rlc2NyaXB0aW9uIjoiXHUwMDNjcFx1MDAzZUZvciB0aGUgZm9sbG93aW5nIGRpc2N1c3Npb24geW91IHdpbGwgbmVlZCB0byByZWFkIFx1MDAzY2EgY2xhc3M9XCJpbnN0cnVjdHVyZV9maWxlX2xpbmsgaW5zdHJ1Y3R1cmVfc2NyaWJkX2ZpbGVcIiB0aXRsZT1cIldlZWsgMiBhdG9taWNfbWFzcy5wZGZcIiBocmVmPVwiL2NvdXJzZXMvMTQ2MTkwMS9maWxlcy8xMDc5MDgzMjYvZG93bmxvYWQ_d3JhcD0xXCIgZGF0YS1hcGktZW5kcG9pbnQ9XCJodHRwczovL3dlYmNvdXJzZXMudWNmLmVkdS9hcGkvdjEvY291cnNlcy8xNDQ3NTE3L2ZpbGVzLzEwMzcyMzUwNVwiIGRhdGEtYXBpLXJldHVybnR5cGU9XCJGaWxlXCJcdTAwM2V0aGlzIGNhc2Ugc3R1ZHlcdTAwM2MvYVx1MDAzZSBpbiBmdWxsIGFuZCBhbnN3ZXIgdGhlIHF1ZXN0aW9ucyB0aHJvdWdob3V0ICh0aGlzIGNhc2Ugc3R1ZHkgd2lsbCBzaG93IHVwIG9uIHlvdXIgZXhhbSkuIEZvciB0aGlzIHdlZWtzIGRpc2N1c3Npb24geW91IHdpbGwgbmVlZCB0byBwb3N0IGEgcGljdHVyZSBvZiB5b3VyIHdvcmsgKG9yIGEgZG9jdW1lbnQpIGFuZCBzdGVwcyBvbiBob3cgeW91IGRldGVybWluZWQgdGhlIGlkZW50aXR5IG9mIGVsZW1lbnQgMSBhbmQgZWxlbWVudCAyLiBcdTAwMjZuYnNwO1lvdSBhbmQgeW91ciBjbGFzc21hdGVzIHdpbGwgd29yayB0b2dldGhlciB0byBhbnN3ZXIgdGhlIHF1ZXN0aW9ucyBpbiB0aGlzIGNhc2Ugc3R1ZHkuIE9uY2UgeW91IHBvc3QgeW91ciByZXNwb25zZSB5b3Ugd2lsbCBuZWVkIHRvIHJlc3BvbmQgdG8gYXQgbGVhc3QgdHdvIG90aGVyIHBvc3QgYW5kIHJlc3BvbmQgYmFjayB0byBzb21lb25lIGlmIHRoZXkgcmVwbGllZCB0byB5b3VyIHBvc3QuIFdoZW4gcmVzcG9uZGluZyB0byBhbm90aGVyIHBvc3QgeW91IGNhbiBkaXNjdXNzIGhvdyB0aGV5IGdvdCB0aGVpciBhbnN3ZXIgb3IgYXNrIGZvciBjbGFyaWZpY2F0aW9uIG9uIHRoZWlyIHJlc3BvbnNlLiBZb3UgY2FuIGFsc28gcmVzcG9uZCB0byBhbm90aGVyIHN0dWRlbnQgcHJvdmlkaW5nIGhlbHBmdS4uLiAodHJ1bmNhdGVkKSJ9.1YDr0UEEwt_5qA21yqb5fZUvqDzaasxFTMiUqqRvEH8",
 			"lti_context_id": "ab5a1979-ec8d-4ecd-b59a-48773a4114fb",
 			"course_id": 1461901,
 			"name": "Case study: Is It a Meteorite? Applying Problem-Solving Strategy to Mass Spectra and Atomic Mass",
@@ -1855,7 +1832,6 @@
 			"original_quiz_id": null,
 			"workflow_state": "published",
 			"important_dates": false,
-			"description": null,
 			"muted": true,
 			"html_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554246",
 			"use_rubric_for_grading": true,
@@ -1913,8 +1889,7 @@
 			"published": true,
 			"only_visible_to_overrides": false,
 			"visible_to_everyone": true,
-			"locked_for_user": true,
-			"lock_explanation": "This assignment is part of the module \u003cb\u003eRocks and minerals\u003c/b\u003e, which is locked until Aug 30 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696666'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696666/prerequisites/discussion_topic_7761140' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+			"locked_for_user": false,
 			"submissions_download_url": "https://webcourses.ucf.edu/courses/1461901/assignments/8554246/submissions?zip=1",
 			"post_manually": false,
 			"anonymize_students": false,
@@ -3244,7 +3219,7 @@
 		"permissions": {
 			"attach": true,
 			"update": false,
-			"reply": false,
+			"reply": true,
 			"delete": false,
 			"manage_assign_to": false
 		},
@@ -3268,21 +3243,10 @@
 		"can_group": true,
 		"topic_children": [],
 		"group_topic_children": [],
-		"locked_for_user": true,
-		"lock_info": {
-			"asset_string": "discussion_topic_7761130",
-			"context_module": {
-				"id": 2696666,
-				"name": "Rocks and minerals",
-				"context_type": "Course",
-				"context_id": 1461901,
-				"workflow_state": "active",
-				"unlock_at": "2024-08-31T03:59:00Z"
-			}
-		},
-		"lock_explanation": "This topic is part of the module \u003cb\u003eRocks and minerals\u003c/b\u003e, which is locked until Aug 30 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696666'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696666/prerequisites/discussion_topic_7761130' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
-		"message": "This topic is part of the module \u003cb\u003eRocks and minerals\u003c/b\u003e, which is locked until Aug 30 at 11:59pm.\u003cbr/\u003e\u003cdiv class='spinner'\u003e\u003c/div\u003e\u003ca style='display: none;' class='module_prerequisites_fallback' href='https://webcourses.ucf.edu/courses/1461901/modules#module_2696666'\u003eVisit the course modules page for information on how to unlock this content.\u003c/a\u003e\u003ca x-canvaslms-trusted-url='/courses/1461901/modules/2696666/prerequisites/discussion_topic_7761130' style='display: none;' id='module_prerequisites_lookup_link'\u003e\u0026nbsp;\u003c/a\u003e",
+		"locked_for_user": false,
+		"message": "\u003clink rel=\"stylesheet\" href=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557878/custom_mobile.css\"\u003e\u003cdiv class=\"entry-content\"\u003e\n\u003cdiv class=\"discussion-section message_wrapper\"\u003e\n\u003cdiv class=\"message user_content enhanced\" data-bind=\"message\"\u003e\n\u003cp\u003ePlease post any questions you may have about the chapter here. Please use this discussion board to communicate with your fellow peers and myself.\u003c/p\u003e\n\u003c/div\u003e\n\u003c/div\u003e\n\u003c/div\u003e\n\u003cdiv id=\"discussion-toolbar\" class=\"toolbarView subscribed\"\u003e\u003c/div\u003e\u003cscript src=\"https://instructure-uploads.s3.amazonaws.com/account_11580000000089347/attachments/103557877/custom_mobile.js\"\u003e\u003c/script\u003e",
 		"todo_date": null,
 		"is_announcement": false
 	}
+]
 ]
