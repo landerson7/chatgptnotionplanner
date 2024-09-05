@@ -50,7 +50,7 @@ func GetAllAssignments() []assignment_due {
 	canvasApiKey := GetEnvVar("CANVAS_API")
 	//url := "https://webcourses.ucf.edu/api/v1/courses/1461901/assignments"
 	//url := "https://webcourses.ucf.edu/api/v1/courses/1461901/assignments/8554277"
-	url := "https://webcourses.ucf.edu/api/v1/courses/1461901/modules/2696667/items"
+	url := "https://webcourses.ucf.edu/api/v1/courses/1465496/assignments"
 
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {

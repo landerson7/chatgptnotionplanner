@@ -75,7 +75,7 @@ func chatGptQuery(notionData string, partialQuery string) string {
 				-Task
 				replace task with each thing I have to do that day and the time.
 				Also add a fun history fact at the end of each day as well as a daily motivating quote and daily protestant christian bible verse.
-				Base your calendar off of the date September 2nd 2024 being a Monday as well and don't forget my quote, fact, and bible verse.`,
+				Base your calendar off of the date September 2nd 2024 being a Monday as well and don't forget my quote, fact, and bible verse and to include any due dates of assignments from the inputted data.`,
 			},
 			{
 				Role:    "user",

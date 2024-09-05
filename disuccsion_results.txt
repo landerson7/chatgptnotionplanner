@@ -120,7 +120,7 @@
 			"has_submitted_submissions": true,
 			"is_quiz_assignment": false,
 			"require_lockdown_browser": false,
-			"Locked_For_User": false
+			"Locked_For_User": true
 		},
 		"Created_At": "2024-07-11T16:21:14Z"
 	},
@@ -149,7 +149,7 @@
 			"due_at": "2024-09-09T03:59:00Z",
 			"name": "Case study: Is It a Meteorite? Applying Problem-Solving Strategy to Mass Spectra and Atomic Mass",
 			"id": 8554246,
-			"has_submitted_submissions": false,
+			"has_submitted_submissions": true,
 			"is_quiz_assignment": false,
 			"require_lockdown_browser": false,
 			"Locked_For_User": false
@@ -300,4 +300,5 @@
 		},
 		"Created_At": "2024-07-11T16:21:10Z"
 	}
+]
 ]

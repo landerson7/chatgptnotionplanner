@@ -467,7 +467,7 @@ func SendAllAssignmentsToOneNotionPage() NotionRequest {
 					fmt.Println("Error parsing time:", err)
 					continue
 				}
-				if now.Before(dueAtTime) && dueAtTime.Before(oneMonthLater) {
+				if now.Before(dueAtTime) && dueAtTime.Before(oneMonthLater) && !assignment.Has_Submitted_Submissions {
 					todo := "Assignment: " + assignment.Name + " Due at: " + formatTime(assignment.Due_At)
 					todos = append(todos, todo)
 				}
@@ -482,7 +482,7 @@ func SendAllAssignmentsToOneNotionPage() NotionRequest {
 					fmt.Println("Error parsing time:", err)
 					continue
 				}
-				if now.Before(dueAtTime) && dueAtTime.Before(oneMonthLater) {
+				if now.Before(dueAtTime) && dueAtTime.Before(oneMonthLater) && !discussion.Assignment.Has_Submitted_Submissions {
 					todo := "Discussion: " + discussion.Title + " Due at: " + formatTime(discussion.Assignment.Due_At)
 					fmt.Println("discussion: " + todo)
 					todos = append(todos, todo)

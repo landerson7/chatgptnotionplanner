@@ -90,6 +90,7 @@ func main() {
 
 	//Main call
 	ArchivePageByName(FormatDate(time.Now()) + " Assignments and Discussions Due Within a Month")
+	ArchivePageByName(FormatDate(time.Now().AddDate(0, 0, -1)) + " Assignments and Discussions Due Within a Month")
 	notionRequest := SendAllAssignmentsToOneNotionPage()
 	chatgptData, err := json.Marshal(notionRequest)
 	if err != nil {
